@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propriedades Físicas dos Compostos Orgânicos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5efe3;
+  --paper:#fffcf6;
+  --ink:#2a251f;
+  --ink-2:#4a4239;
+  --muted:#7a6f62;
+  --line:#e6dccb;
+  --line-2:#d8cbb4;
+  --accent:#b24a24;
+  --accent-soft:#f7e3d8;
+  --blue:#2d5a86;
+  --blue-soft:#e3edf7;
+  --green:#2f7550;
+  --green-soft:#e2f1e7;
+  --gold:#9a6c00;
+  --gold-soft:#fbf0d2;
+  --violet:#6a4a93;
+  --violet-soft:#ede5f6;
+  --red:#b3261e;
+  --red-soft:#fbe4e1;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Hanken Grotesk", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --mono:"JetBrains Mono", Consolas, "Courier New", monospace;
+  --radius:14px;
+  --nav-w:270px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:100;transition:width .08s linear}
+
+/* ---------- NAV ---------- */
+nav#toc{position:fixed;top:0;left:0;bottom:0;width:var(--nav-w);background:var(--paper);border-right:1px solid var(--line);padding:28px 18px 24px;overflow-y:auto;z-index:50}
+nav#toc .brand{font-family:var(--serif);font-weight:700;font-size:1.12rem;line-height:1.25;margin:0 6px 4px}
+nav#toc .brand small{display:block;font-family:var(--sans);font-weight:500;font-size:.74rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+nav#toc ol{list-style:none;margin:18px 0 0;padding:0;counter-reset:n}
+nav#toc li{margin:1px 0}
+nav#toc a{display:block;padding:7px 10px;border-radius:9px;color:var(--ink-2);text-decoration:none;font-size:.9rem;line-height:1.35;border-left:3px solid transparent}
+nav#toc a:hover{background:var(--bg)}
+nav#toc a.active{background:var(--accent-soft);color:var(--accent);border-left-color:var(--accent);font-weight:600}
+nav#toc a.sub{padding-left:24px;font-size:.84rem;color:var(--muted)}
+nav#toc a.sub.active{color:var(--accent)}
+#navToggle{display:none}
+
+main{margin-left:var(--nav-w);padding:0 clamp(16px,4vw,56px) 80px}
+.wrap{max-width:900px;margin:0 auto}
+
+/* ---------- HERO ---------- */
+header.hero{max-width:900px;margin:0 auto;padding:64px 0 34px;border-bottom:1px solid var(--line-2)}
+.kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.08;margin:.35em 0 .4em;letter-spacing:-.01em}
+.lede{font-size:1.14rem;color:var(--ink-2);max-width:760px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font-size:.8rem;padding:4px 11px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-2)}
+
+/* ---------- SECTIONS ---------- */
+section.part{padding-top:56px}
+.part-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.part-num{font-family:var(--mono);font-size:.85rem;color:var(--paper);background:var(--accent);border-radius:8px;padding:2px 9px;flex:none}
+h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.15rem);line-height:1.15;margin:0;font-weight:700}
+h3{font-family:var(--serif);font-size:1.42rem;line-height:1.25;margin:2.2em 0 .5em;font-weight:600;color:var(--ink)}
+h3 .tag{font-family:var(--mono);font-size:.72rem;color:var(--accent);display:block;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+h4{font-size:1.06rem;margin:1.7em 0 .4em;font-weight:700;color:var(--ink)}
+p{margin:.75em 0}
+strong{font-weight:700;color:var(--ink)}
+.lead-in{color:var(--muted);font-size:1.02rem;margin-top:.2em}
+ul,ol{padding-left:1.35em}
+li{margin:.3em 0}
+hr.soft{border:0;border-top:1px dashed var(--line-2);margin:34px 0}
+code,.mono{font-family:var(--mono);font-size:.88em;background:#f0e8da;padding:1px 6px;border-radius:5px}
+sub,sup{font-size:.72em}
+
+/* ---------- CARDS / CALLOUTS ---------- */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:18px 0;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.box{border-radius:var(--radius);padding:16px 20px 16px 20px;margin:20px 0;border:1px solid;position:relative}
+.box > .label{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.box p:first-of-type{margin-top:.2em}
+.box p:last-child{margin-bottom:.2em}
+.def{background:var(--blue-soft);border-color:#c5d8ec}
+.def > .label{color:var(--blue)}
+.warn{background:var(--red-soft);border-color:#f0c2bc}
+.warn > .label{color:var(--red)}
+.exam{background:var(--gold-soft);border-color:#ecd89d}
+.exam > .label{color:var(--gold)}
+.comp{background:var(--violet-soft);border-color:#d6c7ea}
+.comp > .label{color:var(--violet)}
+.note{background:#efeae1;border-color:var(--line-2)}
+.note > .label{color:var(--muted)}
+.key{background:var(--green-soft);border-color:#bddfc9}
+.key > .label{color:var(--green)}
+.src{font-size:.8rem;color:var(--muted);font-style:italic}
+
+/* ---------- TABLES ---------- */
+.tbl-wrap{overflow-x:auto;margin:18px 0;border-radius:12px;border:1px solid var(--line);background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#efe6d6;font-weight:700;color:var(--ink);font-size:.86rem;letter-spacing:.02em}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:.88rem;white-space:nowrap}
+td.c,th.c{text-align:center}
+.hl-row td{background:#fbf4e4}
+.pill{display:inline-block;font-size:.75rem;font-weight:700;padding:1px 9px;border-radius:999px;white-space:nowrap}
+.p-lon{background:#e7ecef;color:#40525e}
+.p-dd{background:var(--blue-soft);color:var(--blue)}
+.p-lh{background:var(--accent-soft);color:var(--accent)}
+.p-id{background:var(--violet-soft);color:var(--violet)}
+.p-ok{background:var(--green-soft);color:var(--green)}
+.p-no{background:var(--red-soft);color:var(--red)}
+
+/* ---------- SCHEMES ---------- */
+pre.scheme{font-family:var(--mono);font-size:.83rem;line-height:1.5;background:#2b2621;color:#f3eadb;padding:18px 20px;border-radius:12px;overflow-x:auto;margin:18px 0;white-space:pre}
+pre.scheme .a{color:#ffb38a}
+pre.scheme .b{color:#9cc7ef}
+pre.scheme .g{color:#a6dbb7}
+pre.scheme .y{color:#f2d27a}
+figure{margin:22px 0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px 10px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:.84rem;color:var(--muted);text-align:center;margin-top:6px;padding:0 8px}
+
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0}
+.flow .step{background:var(--paper);border:1px solid var(--line-2);border-radius:10px;padding:8px 13px;font-weight:600;font-size:.93rem}
+.flow .arrow{color:var(--accent);font-weight:700}
+.flow .step.hot{background:var(--accent);border-color:var(--accent);color:#fff}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.mini h5{margin:0 0 4px;font-size:.98rem}
+.mini p{margin:.3em 0;font-size:.93rem}
+
+/* ---------- DETAILS (exercícios / flashcards) ---------- */
+details{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:12px 0;overflow:hidden}
+details > summary{cursor:pointer;padding:13px 18px;font-weight:600;list-style:none;position:relative;padding-right:42px}
+details > summary::-webkit-details-marker{display:none}
+details > summary::after{content:"+";position:absolute;right:18px;top:10px;font-family:var(--mono);font-size:1.2rem;color:var(--accent)}
+details[open] > summary::after{content:"–"}
+details[open] > summary{border-bottom:1px solid var(--line);background:#fbf6ec}
+details .ans{padding:6px 20px 14px}
+.q-meta{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+button.btn{font-family:var(--sans);font-weight:600;font-size:.88rem;border:1px solid var(--line-2);background:var(--paper);color:var(--ink);padding:8px 14px;border-radius:9px;cursor:pointer}
+button.btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- VIDEOS ---------- */
+.vid-group{margin:26px 0}
+.vid-group h4{margin-bottom:10px}
+.vid{display:flex;gap:16px;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.vid .info{min-width:0}
+.vid .title{font-weight:700;line-height:1.35}
+.vid .by{font-size:.85rem;color:var(--muted)}
+.vid .why{font-size:.88rem;color:var(--ink-2);margin-top:3px}
+a.play{flex:none;display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:10px;white-space:nowrap}
+a.play:hover{background:#8f3a1c}
+a.play svg{width:14px;height:14px}
+
+/* ---------- CHECKLIST ---------- */
+ul.check{list-style:none;padding:0}
+ul.check li{padding:9px 12px 9px 40px;position:relative;background:var(--paper);border:1px solid var(--line);border-radius:10px;margin:8px 0}
+ul.check li::before{content:"✓";position:absolute;left:14px;top:9px;color:var(--green);font-weight:700}
+
+footer{max-width:900px;margin:60px auto 0;padding-top:22px;border-top:1px solid var(--line-2);color:var(--muted);font-size:.85rem}
+
+#toTop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);border:0;font-size:1.1rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;z-index:60}
+#toTop.show{opacity:.85;pointer-events:auto}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1020px){
+  nav#toc{transform:translateX(-100%);transition:transform .25s ease;box-shadow:0 0 40px rgba(0,0,0,.15);width:min(300px,86vw)}
+  nav#toc.open{transform:none}
+  main{margin-left:0}
+  #navToggle{display:flex;align-items:center;gap:8px;position:fixed;top:12px;left:12px;z-index:70;background:var(--ink);color:var(--paper);border:0;border-radius:10px;padding:9px 13px;font-family:var(--sans);font-weight:600;font-size:.88rem;cursor:pointer}
+  header.hero{padding-top:74px}
+}
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .vid{flex-direction:column;align-items:flex-start}
+  .card{padding:18px 16px}
+  .box{padding:14px 15px}
+  th,td{padding:8px 9px}
+}
+
+/* ---------- PRINT ---------- */
+@media print{
+  body{background:#fff;font-size:11.5pt}
+  nav#toc,#navToggle,#progress,#toTop,.toolbar{display:none!important}
+  main{margin:0;padding:0}
+  section.part{padding-top:18px;break-before:auto}
+  .card,.box,figure,table,pre.scheme,details,.vid{break-inside:avoid}
+  details{border:1px solid #ccc}
+  details .ans{display:block!important}
+  pre.scheme{background:#f4f4f4;color:#111;border:1px solid #ccc}
+  pre.scheme span{color:#111!important}
+  a.play{background:none;color:#000;border:1px solid #999}
+  a.play::after{content:" (" attr(href) ")";font-weight:400;font-size:.8em}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="navToggle" aria-label="Abrir sumário">☰ Sumário</button>
+
+<nav id="toc" aria-label="Sumário">
+  <div class="brand">Propriedades Físicas dos Compostos Orgânicos<small>Química Orgânica · 2ª série</small></div>
+  <ol>
+    <li><a href="#visao">1. Visão geral</a></li>
+    <li><a href="#explicacao">2. Explicação completa</a></li>
+    <li><a class="sub" href="#polaridade">2.1 Polaridade</a></li>
+    <li><a class="sub" href="#forcas">2.2 Forças intermoleculares</a></li>
+    <li><a class="sub" href="#ebulicao">2.3 Temperatura de ebulição</a></li>
+    <li><a class="sub" href="#solubilidade">2.4 Solubilidade</a></li>
+    <li><a class="sub" href="#conexoes">2.5 Complemento e conexões</a></li>
+    <li><a href="#analogias">3. Exemplos e analogias</a></li>
+    <li><a href="#esquemas">4. Esquemas em texto</a></li>
+    <li><a href="#pegadinhas">5. Pontos de atenção e pegadinhas</a></li>
+    <li><a href="#prova">6. O que mais cai em prova</a></li>
+    <li><a href="#videos">7. Vídeos completos</a></li>
+    <li><a href="#revisao">8. Revisão final</a></li>
+    <li><a href="#fotos">Notas sobre as fotos</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="kicker">Compostos do Carbono · Aula completa</div>
+  <h1>Polaridade, forças intermoleculares, ebulição e solubilidade</h1>
+  <p class="lede">Por que o etanol ferve a 78&nbsp;°C e o éter dimetílico, com a mesma massa, a −24&nbsp;°C? Por que o álcool da gasolina "foge" para a água? Tudo nesta aula sai de uma única ideia: <strong>a estrutura da molécula decide como ela se atrai com as vizinhas — e isso decide as propriedades físicas.</strong></p>
+  <div class="meta">
+    <span class="chip">Base: apostila Colégio Agostiniano Mendel — Prof.ª Thatiana &amp; Prof. Gabriel Esteves</span>
+    <span class="chip">+ suas anotações de aula</span>
+    <span class="chip">Nível: 2º EM → FUVEST / Unicamp / ENEM</span>
+  </div>
+  <div class="box note" style="margin-top:22px">
+    <span class="label">Como ler esta aula</span>
+    <p>O conteúdo vem das 7 fotos (apostila impressa + suas anotações à mão). Tudo o que eu acrescentei de fora aparece em caixas roxas marcadas <strong>“Complemento para melhor compreensão:”</strong>. Onde a foto estava ilegível ou ambígua, há um aviso — a lista completa está em <a href="#fotos">Notas sobre as fotos</a>.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ================= 1. VISÃO GERAL ================= -->
+<section class="part" id="visao">
+  <div class="part-head"><span class="part-num">01</span><h2>Visão geral do tema</h2></div>
+  <p class="lead-in">O mapa da aula inteira em uma linha.</p>
+
+  <div class="flow" aria-label="Cadeia causal da aula">
+    <span class="step">Estrutura da molécula</span><span class="arrow">→</span>
+    <span class="step">Polaridade</span><span class="arrow">→</span>
+    <span class="step hot">Força intermolecular (FIM)</span><span class="arrow">→</span>
+    <span class="step">TE · pressão de vapor · volatilidade · solubilidade</span>
+  </div>
+
+  <p>Uma substância líquida é um monte de moléculas <strong>grudadas umas nas outras</strong> por atrações fracas chamadas <strong>forças intermoleculares</strong> (seu caderno usa a sigla <strong>FIM</strong>). Quase toda propriedade física desta aula responde a uma de duas perguntas:</p>
+
+  <div class="grid2">
+    <div class="mini">
+      <h5>Pergunta 1 — quanto elas se prendem entre si?</h5>
+      <p>Moléculas <em>iguais</em> atraindo-se. Decide a <strong>temperatura de ebulição (TE)</strong>, a <strong>pressão de vapor</strong> e a <strong>volatilidade</strong>.</p>
+      <p><strong>FIM ↑ ⟹ TE ↑ ⟹ pressão de vapor e volatilidade ↓</strong></p>
+    </div>
+    <div class="mini">
+      <h5>Pergunta 2 — elas se dão bem com o solvente?</h5>
+      <p>Moléculas <em>diferentes</em> atraindo-se. Decide a <strong>solubilidade</strong>.</p>
+      <p><strong>“Semelhante tende a dissolver semelhante”</strong> — polar com polar, apolar com apolar.</p>
+    </div>
+  </div>
+
+  <p>Para responder às duas, você precisa de três ferramentas, que são os três primeiros tópicos da aula:</p>
+  <ol>
+    <li><strong>Polaridade</strong> — saber se a molécula tem um lado “mais negativo” e outro “mais positivo”.</li>
+    <li><strong>Tipos de força intermolecular</strong> — dispersões de London, dipolo-dipolo, ligação de hidrogênio e íon-dipolo, e qual função orgânica faz qual.</li>
+    <li><strong>Fatores que mudam a intensidade</strong> — tamanho da cadeia, ramificação, posição do grupo funcional (impedimento estérico), número de grupos polares e dímeros.</li>
+  </ol>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Página (foto)</th><th>O que traz</th><th>Onde está nesta aula</th></tr></thead>
+      <tbody>
+        <tr><td>Anotação à mão “Polaridade”</td><td>Nuvem eletrônica, vetor μ, CCl<sub>4</sub>, metanol, regra prática</td><td><a href="#polaridade">2.1</a></td></tr>
+        <tr><td>Apostila p. “Propriedades físico-químicas…”</td><td>Tabela das 4 forças intermoleculares + funções; FIM × TE × Pvapor</td><td><a href="#forcas">2.2</a>, <a href="#ebulicao">2.3</a></td></tr>
+        <tr><td>Apostila — séries de moléculas</td><td>Tamanho da cadeia, isômeros do C<sub>5</sub>H<sub>12</sub>, impedimento estérico</td><td><a href="#ebulicao">2.3</a></td></tr>
+        <tr><td>Apostila — funções diferentes, massa próxima + Solubilidade</td><td>Éter × álcool × cetona; “semelhante dissolve semelhante”; balanço polar/apolar</td><td><a href="#ebulicao">2.3</a>, <a href="#solubilidade">2.4</a></td></tr>
+        <tr><td>Apostila — Casos 1, 2 e 3</td><td>Etanol em água/hexano, poliálcoois, gasolina + etanol + água</td><td><a href="#solubilidade">2.4</a></td></tr>
+        <tr><td>Apostila — “Resumindo…”</td><td>Quadro-resumo por função</td><td><a href="#solubilidade">2.4</a></td></tr>
+        <tr><td>Apostila — “Complemento e Conexões”</td><td>Dímero de ácidos carboxílicos; éter, álcool em gel, perfumes</td><td><a href="#ebulicao">2.3</a>, <a href="#conexoes">2.5</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 2. EXPLICAÇÃO ================= -->
+<section class="part" id="explicacao">
+  <div class="part-head"><span class="part-num">02</span><h2>Explicação completa, tópico por tópico</h2></div>
+  <p class="lead-in">Do zero ao nível de vestibular. Siga na ordem: cada tópico usa o anterior.</p>
+</section>
+
+<!-- ---------- 2.1 POLARIDADE ---------- -->
+<section id="polaridade">
+  <h3><span class="tag">2.1 · Suas anotações — “Polaridade”</span>Polaridade das moléculas</h3>
+
+  <h4>Passo 0 — de onde vem a polaridade</h4>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão:</span>
+    <p><strong>Eletronegatividade</strong> é a “força” com que um átomo puxa para si os elétrons de uma ligação. Ordem mais cobrada:</p>
+    <p class="mono" style="display:inline-block">F &gt; O &gt; N ≈ Cl &gt; Br &gt; I ≈ S ≈ C &gt; P ≈ H</p>
+    <p>(Frase para decorar: “<em>Fui Ontem No Clube, Briguei, I Saí Correndo Para o Hospital</em>”.)</p>
+    <p>Se os dois átomos de uma ligação têm eletronegatividades diferentes, os elétrons ficam mais perto do mais eletronegativo: ele ganha uma carga parcial <strong>δ−</strong> e o outro fica <strong>δ+</strong>. Essa ligação é <strong>polar</strong> e é representada por uma seta chamada <strong>vetor momento dipolar (μ⃗)</strong>, que aponta <strong>para o átomo mais eletronegativo</strong> — exatamente como você desenhou: setas saindo do C em direção aos Cl.</p>
+  </div>
+
+  <p>Uma molécula pode ter várias ligações polares. Cada uma é uma seta. A <strong>polaridade da molécula</strong> depende da <strong>soma</strong> dessas setas — e a soma depende da <strong>geometria</strong> (como as setas estão arrumadas no espaço).</p>
+
+  <div class="grid2">
+    <div class="box key" style="margin:0">
+      <span class="label">Apolar</span>
+      <p><strong>Σμ⃗ = 0</strong> — as setas se cancelam. A molécula não tem “lado negativo” nem “lado positivo”.</p>
+    </div>
+    <div class="box warn" style="margin:0">
+      <span class="label">Polar</span>
+      <p><strong>Σμ⃗ ≠ 0</strong> — sobra uma seta resultante. A molécula tem um polo δ− e um polo δ+ (é um <strong>dipolo</strong>).</p>
+    </div>
+  </div>
+
+  <h4>Os dois exemplos do seu caderno</h4>
+  <figure>
+    <svg viewBox="0 0 760 290" role="img" aria-label="CCl4 com quatro vetores que se cancelam e metanol com vetor resultante">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d5a86"/></marker>
+        <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker>
+      </defs>
+      <!-- CCl4 -->
+      <text x="170" y="22" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="17" font-weight="700" fill="#2a251f">CCl₄ (tetracloreto de carbono)</text>
+      <g font-family="Hanken Grotesk,Arial,sans-serif" font-size="22" font-weight="700" fill="#2a251f" text-anchor="middle">
+        <text x="170" y="150">C</text>
+        <text x="170" y="62">Cl</text><text x="170" y="245">Cl</text>
+        <text x="70" y="150">Cl</text><text x="272" y="150">Cl</text>
+      </g>
+      <g stroke="#2a251f" stroke-width="2">
+        <line x1="170" y1="127" x2="170" y2="72"/><line x1="170" y1="155" x2="170" y2="224"/>
+        <line x1="158" y1="142" x2="92" y2="142"/><line x1="183" y1="142" x2="250" y2="142"/>
+      </g>
+      <g stroke="#2d5a86" stroke-width="2.4" marker-end="url(#ah)">
+        <line x1="186" y1="120" x2="186" y2="80"/><line x1="186" y1="162" x2="186" y2="215"/>
+        <line x1="150" y1="126" x2="100" y2="126"/><line x1="190" y1="126" x2="243" y2="126"/>
+      </g>
+      <text x="170" y="278" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="15" fill="#2f7550" font-weight="600">Σμ⃗ = 0 → APOLAR</text>
+
+      <line x1="380" y1="30" x2="380" y2="270" stroke="#e6dccb" stroke-width="2" stroke-dasharray="5 6"/>
+
+      <!-- METANOL -->
+      <text x="575" y="22" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="17" font-weight="700" fill="#2a251f">CH₃OH (metanol)</text>
+      <g font-family="Hanken Grotesk,Arial,sans-serif" font-size="22" font-weight="700" fill="#2a251f" text-anchor="middle">
+        <text x="500" y="158">C</text>
+        <text x="500" y="78">H</text><text x="500" y="240">H</text><text x="430" y="158">H</text>
+        <text x="610" y="158">O</text>
+        <text x="672" y="214">H</text>
+      </g>
+      <g stroke="#2a251f" stroke-width="2">
+        <line x1="500" y1="135" x2="500" y2="84"/><line x1="500" y1="163" x2="500" y2="220"/>
+        <line x1="488" y1="150" x2="444" y2="150"/><line x1="513" y1="150" x2="597" y2="150"/>
+        <line x1="622" y1="160" x2="662" y2="196"/>
+      </g>
+      <g fill="#2a251f"><circle cx="602" cy="128" r="2.6"/><circle cx="611" cy="128" r="2.6"/><circle cx="627" cy="138" r="2.6"/><circle cx="632" cy="146" r="2.6"/></g>
+      <g stroke="#2d5a86" stroke-width="2.4" marker-end="url(#ah)">
+        <line x1="522" y1="136" x2="585" y2="136"/>
+        <line x1="676" y1="188" x2="646" y2="161"/>
+      </g>
+      <g stroke="#b3261e" stroke-width="3" marker-end="url(#ahr)"><line x1="610" y1="118" x2="610" y2="62"/></g>
+      <text x="620" y="58" font-family="JetBrains Mono,monospace" font-size="13" fill="#b3261e" font-weight="600">resultante</text>
+      <text x="592" y="182" font-family="Hanken Grotesk,Arial" font-size="13" fill="#b24a24" text-anchor="end">δ−</text>
+      <text x="575" y="278" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="15" fill="#b3261e" font-weight="600">Σμ⃗ ≠ 0 → POLAR</text>
+    </svg>
+    <figcaption>Redesenho das suas anotações. Azul: vetor de cada ligação polar (aponta para o mais eletronegativo). Vermelho: resultante do metanol. O CCl₄ foi desenhado “achatado” no caderno; no espaço ele é um tetraedro — e o cancelamento continua valendo.</figcaption>
+  </figure>
+
+  <div class="card">
+    <p><strong>CCl<sub>4</sub>:</strong> as quatro ligações C–Cl são polares (Cl é mais eletronegativo que C), mas são <strong>iguais</strong> e estão <strong>simetricamente distribuídas</strong> (geometria tetraédrica). Quatro setas iguais apontando para direções simétricas se anulam, como quatro pessoas de mesma força puxando uma caixa para os quatro lados: ela não sai do lugar. <strong>Σμ⃗ = 0 → apolar.</strong></p>
+    <p><strong>CH<sub>3</sub>OH (metanol):</strong> há uma seta C→O e uma seta H→O (o O é o mais eletronegativo da molécula). O oxigênio ainda tem <strong>dois pares de elétrons não ligantes</strong> (os pontinhos que você desenhou), que deixam o arranjo em volta dele <strong>angular</strong>. As setas não se cancelam: sobra uma resultante apontando para o lado do O (a seta vermelha do seu caderno). <strong>Σμ⃗ ≠ 0 → polar.</strong></p>
+  </div>
+
+  <h4>Nuvem eletrônica = região eletrônica</h4>
+  <div class="box def">
+    <span class="label">Definição</span>
+    <p>Em volta do <strong>átomo central</strong>, cada uma das estruturas abaixo conta como <strong>1 nuvem eletrônica</strong> (ou região eletrônica):</p>
+    <ul>
+      <li>uma ligação <strong>simples</strong>;</li>
+      <li>uma ligação <strong>dupla</strong> (conta 1, não 2!);</li>
+      <li>uma ligação <strong>tripla</strong> (conta 1, não 3!);</li>
+      <li>um <strong>par de elétrons não ligante</strong> (par “sobrando”, que não participa de ligação).</li>
+    </ul>
+  </div>
+
+  <h4>Regra prática (do seu caderno)</h4>
+  <div class="box key">
+    <span class="label">Regra prática — para moléculas com um átomo central</span>
+    <p><strong>Nº de nuvens do átomo central = Nº de ligantes iguais ⟹ APOLAR</strong></p>
+    <p><strong>Nº de nuvens do átomo central ≠ Nº de ligantes iguais ⟹ POLAR</strong></p>
+  </div>
+
+  <p><strong>Por que funciona?</strong> Se todas as nuvens em volta do átomo central são ligantes <em>idênticos</em>, a molécula fica perfeitamente simétrica (linear, trigonal plana ou tetraédrica) e as setas se cancelam. Basta existir <strong>um par não ligante</strong> (que ocupa espaço mas não tem “seta igual às outras”) ou <strong>um ligante diferente</strong> para quebrar a simetria — e sobra resultante.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Molécula</th><th>Nuvens no átomo central</th><th class="c">Ligantes iguais</th><th>Conclusão</th></tr></thead>
+      <tbody>
+        <tr><td>CO<sub>2</sub> (O=C=O)</td><td>2 (duas duplas)</td><td class="c">2 O</td><td><span class="pill p-ok">2 = 2 → apolar</span></td></tr>
+        <tr><td>CH<sub>4</sub></td><td>4 (quatro simples)</td><td class="c">4 H</td><td><span class="pill p-ok">apolar</span></td></tr>
+        <tr><td>CCl<sub>4</sub> · CF<sub>4</sub> <span class="src">(caderno)</span></td><td>4</td><td class="c">4</td><td><span class="pill p-ok">apolar</span></td></tr>
+        <tr><td>BF<sub>3</sub></td><td>3</td><td class="c">3 F</td><td><span class="pill p-ok">apolar</span></td></tr>
+        <tr><td>H<sub>2</sub>O</td><td>4 (2 ligações + 2 pares não ligantes)</td><td class="c">2 H</td><td><span class="pill p-no">4 ≠ 2 → polar</span></td></tr>
+        <tr><td>NH<sub>3</sub></td><td>4 (3 ligações + 1 par)</td><td class="c">3 H</td><td><span class="pill p-no">polar</span></td></tr>
+        <tr><td>CH<sub>3</sub>Cl</td><td>4</td><td class="c">3 H (o Cl é diferente)</td><td><span class="pill p-no">polar</span></td></tr>
+        <tr><td>CH<sub>2</sub>Cl<sub>2</sub></td><td>4</td><td class="c">2 H / 2 Cl</td><td><span class="pill p-no">polar</span></td></tr>
+        <tr><td>HCN (H–C≡N)</td><td>2</td><td class="c">nenhum igual</td><td><span class="pill p-no">polar</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Exemplos além de CCl<sub>4</sub>, CF<sub>4</sub> e metanol: complemento para melhor compreensão.</p>
+
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão: e nas moléculas orgânicas grandes?</span>
+    <p>A regra prática vale para <strong>um átomo central</strong>. Numa molécula orgânica com vários carbonos, pense assim:</p>
+    <ul>
+      <li><strong>Hidrocarbonetos</strong> (só C e H): a ligação C–H é quase apolar (C e H têm eletronegatividades muito próximas). Por isso todos os hidrocarbonetos são tratados como <strong>apolares</strong>.</li>
+      <li><strong>Presença de O, N, halogênio</strong>: cria ligações polares. A molécula será polar, a menos que haja simetria perfeita (caso do CCl<sub>4</sub>, “haletos totalmente e igualmente substituídos”, como diz a apostila).</li>
+      <li>Clássico de prova: <strong>cis-1,2-dicloroeteno é polar</strong> (os dois Cl do mesmo lado — setas somam) e <strong>trans-1,2-dicloroeteno é apolar</strong> (Cl em lados opostos — setas se anulam). Mesma fórmula, polaridades diferentes.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ---------- 2.2 FORÇAS INTERMOLECULARES ---------- -->
+<section id="forcas">
+  <h3><span class="tag">2.2 · Apostila — “Propriedades físico-químicas dos compostos orgânicos”</span>Forças intermoleculares (FIM)</h3>
+
+  <div class="box def">
+    <span class="label">Definição</span>
+    <p><strong>Forças intermoleculares</strong> são atrações <strong>entre moléculas diferentes</strong> (“inter” = entre). Não confunda com as <strong>ligações covalentes</strong>, que ficam <strong>dentro</strong> de cada molécula (“intra”). Quando a água ferve, as moléculas de H<sub>2</sub>O se separam umas das outras, mas <strong>cada molécula continua inteira</strong>: o que se rompe são as FIM, não as ligações O–H.</p>
+  </div>
+
+  <p>A apostila organiza as quatro forças em uma tabela, da mais fraca para a mais forte (seta “AUMENTA A INTENSIDADE DAS ATRAÇÕES*”):</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Dispersões de London</th><th>Dipolo-dipolo</th><th>Ligações de hidrogênio</th><th>Íon-dipolo</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ocorre entre regiões apolares das moléculas orgânicas.</td>
+          <td>Ocorrem entre moléculas polares, quando não há as condições necessárias para a ligação de hidrogênio (H ligado a F, O, N).</td>
+          <td>Ocorre quando um H ligado diretamente a F, O ou N interage com um par de elétrons não ligante de F, O ou N de outra molécula.</td>
+          <td>Importantes na solvatação de espécies iônicas por solventes polares, como ocorre na dissolução de sais em água e na hidratação das regiões iônicas dos tensoativos.</td>
+        </tr>
+        <tr class="hl-row">
+          <td>· Hidrocarbonetos<br>· Haletos orgânicos totalmente e igualmente substituídos, como no caso do CCl<sub>4</sub></td>
+          <td>· Éter<br>· Tiocompostos<br>· Nitrocompostos<br>· Aldeído<br>· Cetona<br>· Anidrido<br>· Nitrila<br>· Éster<br>· Amina terciária<br>· Amida terciária</td>
+          <td>· Ácidos carboxílicos<br>· Álcool<br>· Enol<br>· Fenol<br>· Amina primária<br>· Amina secundária<br>· Amida primária<br>· Amida secundária<br>· Ácidos sulfônicos</td>
+          <td>· Sais dissolvidos em água<br>· Tensoativos (agentes emulsificantes)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">* “Tendência geral, considerando partículas de tamanhos comparáveis.” — nota da apostila. Essa ressalva é importantíssima; veja o item 4 abaixo.</p>
+
+  <h4>1) Dispersões de London (dipolo instantâneo – dipolo induzido)</h4>
+  <p>É a força das moléculas <strong>apolares</strong> — hidrocarbonetos e haletos simétricos como CCl<sub>4</sub> e CF<sub>4</sub> (suas anotações: “Nº nuvens = Nº ligantes iguais = apolar e vice-versa”).</p>
+  <p>Se a molécula é apolar, como ela se atrai? Suas anotações explicam: os elétrons estão sempre em movimento. Em um instante qualquer, eles se acumulam mais de um lado — <strong>a parte negativa fica temporariamente exposta</strong> (δ−) e o outro lado fica δ+. Surge um <strong>dipolo instantâneo</strong>. Esse dipolo repele os elétrons da molécula vizinha e cria nela um <strong>dipolo induzido</strong>. Os dois se atraem por um instante. É uma <strong>atração fraca</strong>, mas acontece o tempo todo, entre todas as moléculas.</p>
+
+  <figure>
+    <svg viewBox="0 0 760 210" role="img" aria-label="Formação do dipolo instantâneo e do dipolo induzido">
+      <defs>
+        <radialGradient id="neg" cx="25%" cy="50%" r="60%"><stop offset="0" stop-color="#9cc0e4"/><stop offset="1" stop-color="#eef3f8"/></radialGradient>
+        <radialGradient id="neu" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#d6e3ef"/><stop offset="1" stop-color="#f4f7fa"/></radialGradient>
+      </defs>
+      <text x="130" y="24" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="15" font-weight="700" fill="#2a251f">① Nuvem “normal”</text>
+      <ellipse cx="130" cy="105" rx="92" ry="50" fill="url(#neu)" stroke="#7a8ea3" stroke-width="1.5"/>
+      <text x="130" y="110" text-anchor="middle" font-family="Hanken Grotesk,Arial" font-size="14" fill="#4a4239">elétrons espalhados</text>
+      <text x="130" y="185" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62">sem polo</text>
+
+      <text x="505" y="24" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="15" font-weight="700" fill="#2a251f">② Dipolo instantâneo → ③ dipolo induzido</text>
+      <ellipse cx="385" cy="105" rx="92" ry="50" fill="url(#neg)" stroke="#2d5a86" stroke-width="1.5"/>
+      <ellipse cx="625" cy="105" rx="92" ry="50" fill="url(#neg)" stroke="#2d5a86" stroke-width="1.5"/>
+      <g font-family="Hanken Grotesk,Arial" font-weight="700" font-size="20">
+        <text x="322" y="112" fill="#2d5a86">δ−</text><text x="440" y="112" fill="#b24a24">δ+</text>
+        <text x="562" y="112" fill="#2d5a86">δ−</text><text x="680" y="112" fill="#b24a24">δ+</text>
+      </g>
+      <line x1="470" y1="105" x2="540" y2="105" stroke="#b3261e" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <text x="505" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#b3261e">atração</text>
+      <text x="385" y="185" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62">“parte negativa exposta”</text>
+      <text x="625" y="185" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62">vizinha polarizada</text>
+    </svg>
+    <figcaption>Esquema das dispersões de London. A distorção dura um instante e logo se desfaz — mas outra surge em seguida.</figcaption>
+  </figure>
+
+  <div class="box key">
+    <span class="label">O que aumenta a força de London</span>
+    <p><strong>Superfície de contato</strong> e <strong>tamanho da molécula</strong>: moléculas maiores têm mais elétrons e mais área para “encostar” nas vizinhas → mais pontos de atração. É por isso que “↑ cadeia (porção apolar) = ↑ FIM = ↑ TE”, como está no seu caderno.</p>
+  </div>
+  <div class="box warn">
+    <span class="label">Atenção</span>
+    <p>London <strong>existe em todas as moléculas</strong>, polares ou apolares. Nas apolares ela é a <strong>única</strong>; nas polares ela se soma às outras forças. A cadeia carbônica de um álcool, por exemplo, faz London; o grupo OH faz ligação de hidrogênio.</p>
+  </div>
+
+  <h4>2) Dipolo-dipolo (dipolo permanente)</h4>
+  <p>Acontece entre moléculas <strong>polares</strong> que <strong>não</strong> cumprem a condição da ligação de hidrogênio. Cada molécula já é um dipolo fixo (não depende de “instante”): o polo δ+ de uma atrai o polo δ− da outra. É mais forte que London para moléculas de tamanho parecido.</p>
+  <p>Funções da apostila: <strong>éter, tiocompostos, nitrocompostos, aldeído, cetona, anidrido, nitrila, éster, amina terciária e amida terciária</strong>. O que elas têm em comum? Todas têm átomos eletronegativos (O, N, S) tornando a molécula polar, mas <strong>nenhum H ligado diretamente a F, O ou N</strong>.</p>
+  <ul>
+    <li><strong>Aldeído</strong> (R–CHO): tem O e tem H, mas o H está ligado ao <strong>C</strong>, não ao O. Não faz ligação de hidrogênio entre suas moléculas.</li>
+    <li><strong>Amina terciária</strong> (N ligado a 3 carbonos) e <strong>amida terciária</strong>: o N não tem mais nenhum H. Sem H em N, sem ligação de hidrogênio entre si.</li>
+  </ul>
+
+  <h4>3) Ligação de hidrogênio (LH)</h4>
+  <p>É um dipolo-dipolo “turbinado”. A regra tem <strong>duas metades</strong> e você precisa checar as duas:</p>
+  <div class="grid2">
+    <div class="mini"><h5>Doador</h5><p>Um <strong>H ligado diretamente a F, O ou N</strong>. Como F, O e N são muito eletronegativos e pequenos, eles “roubam” quase todo o elétron do H, que fica um δ+ muito intenso e exposto.</p></div>
+    <div class="mini"><h5>Aceitador</h5><p>Um <strong>par de elétrons não ligante de F, O ou N</strong> de <strong>outra</strong> molécula, que atrai esse H.</p></div>
+  </div>
+  <p>Funções da apostila: <strong>ácidos carboxílicos, álcool, enol, fenol, amina primária, amina secundária, amida primária, amida secundária, ácidos sulfônicos</strong> — todas têm O–H ou N–H.</p>
+
+  <figure>
+    <svg viewBox="0 0 760 200" role="img" aria-label="Ligação de hidrogênio entre etanol e água">
+      <g font-family="Hanken Grotesk,Arial" font-size="22" font-weight="700" fill="#2a251f">
+        <text x="248" y="112" text-anchor="end">CH₃—CH₂—</text><text x="252" y="112">O</text>
+        <text x="300" y="160">H</text>
+        <text x="470" y="112">O</text>
+        <text x="420" y="60">H</text><text x="540" y="60">H</text>
+      </g>
+      <line x1="272" y1="116" x2="299" y2="143" stroke="#2a251f" stroke-width="2"/>
+      <line x1="470" y1="92" x2="440" y2="65" stroke="#2a251f" stroke-width="2"/>
+      <line x1="492" y1="92" x2="538" y2="65" stroke="#2a251f" stroke-width="2"/>
+      <line x1="322" y1="150" x2="466" y2="110" stroke="#b24a24" stroke-width="3" stroke-dasharray="3 6" stroke-linecap="round"/>
+      <g fill="#2a251f"><circle cx="467" cy="128" r="2.6"/><circle cx="477" cy="128" r="2.6"/></g>
+      <text x="395" y="162" font-family="JetBrains Mono,monospace" font-size="13" fill="#b24a24">ligação de hidrogênio</text>
+      <text x="306" y="186" font-family="Hanken Grotesk,Arial" font-size="13" fill="#b24a24">δ+</text>
+      <text x="486" y="140" font-family="Hanken Grotesk,Arial" font-size="13" fill="#2d5a86">δ− (par não ligante)</text>
+      <text x="92" y="150" font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62">etanol (doador)</text>
+      <text x="560" y="112" font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62">água (aceitadora)</text>
+    </svg>
+    <figcaption>O H do O–H do etanol é atraído pelo par não ligante do O da água (a apostila traz desenhos de água–água e etanol–água nesse mesmo espírito). A água também pode doar H para o O do etanol.</figcaption>
+  </figure>
+
+  <div class="box warn">
+    <span class="label">Pegadinha clássica</span>
+    <p>“Tem H e tem O, então faz ligação de hidrogênio” — <strong>errado</strong>. O H precisa estar <strong>ligado diretamente</strong> ao F, O ou N. CH<sub>3</sub>–O–CH<sub>3</sub> (éter) tem O e tem H, mas todos os H estão em carbonos: só dipolo-dipolo.</p>
+  </div>
+
+  <h4>4) Íon-dipolo</h4>
+  <p>Atração entre um <strong>íon</strong> (carga inteira, + ou −) e uma <strong>molécula polar</strong>. É a força que dissolve sais em água: o Na<sup>+</sup> fica cercado pelos O (δ−) da água e o Cl<sup>−</sup> pelos H (δ+). Esse “abraço” de solvente em volta do íon chama-se <strong>solvatação</strong> (ou <strong>hidratação</strong>, quando o solvente é a água). Nos <strong>tensoativos</strong> (sabões e detergentes), a “cabeça” iônica da molécula é hidratada por íon-dipolo — veja a seção de solubilidade.</p>
+
+  <h4>A escala de intensidade — e a ressalva</h4>
+  <div class="flow">
+    <span class="step"><span class="pill p-lon">London</span></span><span class="arrow">&lt;</span>
+    <span class="step"><span class="pill p-dd">Dipolo-dipolo</span></span><span class="arrow">&lt;</span>
+    <span class="step"><span class="pill p-lh">Ligação de H</span></span><span class="arrow">&lt;</span>
+    <span class="step"><span class="pill p-id">Íon-dipolo</span></span>
+  </div>
+  <div class="box exam">
+    <span class="label">Leia a letra miúda</span>
+    <p>A apostila diz: <em>“tendência geral, considerando partículas de tamanhos comparáveis”</em>. Uma molécula apolar grande pode ter London <strong>mais forte</strong> do que a ligação de hidrogênio de uma molécula pequena.</p>
+  </div>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão:</span>
+    <p>O <strong>hexano</strong> (C<sub>6</sub>H<sub>14</sub>, só London) ferve a cerca de <strong>69&nbsp;°C</strong>, acima do <strong>metanol</strong> (CH<sub>3</sub>OH, faz LH), que ferve a cerca de <strong>65&nbsp;°C</strong>. O decano (C<sub>10</sub>H<sub>22</sub>) ferve a ~174&nbsp;°C, bem acima da água. Tamanho também pesa.</p>
+  </div>
+</section>
+
+<!-- ---------- 2.3 TEMPERATURA DE EBULIÇÃO ---------- -->
+<section id="ebulicao">
+  <h3><span class="tag">2.3 · Apostila — “1. Temperatura de Ebulição”</span>Temperatura de ebulição, pressão de vapor e volatilidade</h3>
+
+  <p>Ferver é separar as moléculas do líquido e mandá-las para o vapor. Para isso é preciso fornecer energia suficiente para <strong>vencer as forças intermoleculares</strong>. Quanto mais “grudadas” estão as moléculas, mais energia (mais temperatura) é preciso. Suas anotações resumem numa linha só:</p>
+
+  <div class="flow">
+    <span class="step hot">FIM ↑</span><span class="arrow">=</span>
+    <span class="step">TE ↑</span><span class="arrow">=</span>
+    <span class="step">P<sub>vapor</sub> ↓ · volatilidade ↓</span>
+  </div>
+
+  <div class="grid3">
+    <div class="mini"><h5>FIM</h5><p>Força intermolecular: o quanto as moléculas se prendem entre si.</p></div>
+    <div class="mini"><h5>TE</h5><p>Temperatura de ebulição: a temperatura em que o líquido ferve.</p></div>
+    <div class="mini"><h5>P<sub>vapor</sub> / volatilidade</h5><p>Tendência de as moléculas escaparem para o vapor. Substância volátil = evapora fácil (cheiro forte, some rápido).</p></div>
+  </div>
+
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão: por que TE e pressão de vapor andam ao contrário?</span>
+    <p>Pressão de vapor é a pressão que o vapor de um líquido faz, a uma dada temperatura, quando está em equilíbrio com ele. Se as FIM são fracas, muitas moléculas conseguem escapar → muito vapor → pressão de vapor <strong>alta</strong>. O líquido ferve quando sua pressão de vapor iguala a pressão externa (1 atm ao nível do mar). Quem já tem pressão de vapor alta chega nesse ponto “cedo”, com pouca temperatura → <strong>TE baixa</strong>.</p>
+  </div>
+
+  <p>Agora, os <strong>cinco fatores</strong> que a apostila e o complemento mostram. Na prova, você vai usá-los nesta ordem.</p>
+
+  <!-- Fator A -->
+  <h4>Fator A — O tipo de força (a função orgânica)</h4>
+  <p class="src">Apostila: “Séries de moléculas com funções orgânicas diferentes e massa molar próxima”.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Substância</th><th>Função</th><th class="num">Massa molar</th><th>FIM predominante</th><th class="num">TE</th></tr></thead>
+      <tbody>
+        <tr><td>CH<sub>3</sub>–O–CH<sub>3</sub> (éter dimetílico)</td><td>Éter</td><td class="num">46 g/mol</td><td><span class="pill p-dd">dipolo-dipolo</span></td><td class="num">−24 °C</td></tr>
+        <tr><td>CH<sub>3</sub>–CH<sub>2</sub>–OH (etanol)</td><td>Álcool</td><td class="num">46 g/mol</td><td><span class="pill p-lh">lig. de H</span></td><td class="num">78 °C</td></tr>
+        <tr><td>CH<sub>3</sub>–CO–CH<sub>3</sub> (propanona)</td><td>Cetona</td><td class="num">58 g/mol</td><td><span class="pill p-dd">dipolo-dipolo</span></td><td class="num">56 °C</td></tr>
+        <tr><td>CH<sub>3</sub>–CH<sub>2</sub>–CH<sub>2</sub>–OH (propan-1-ol)</td><td>Álcool</td><td class="num">60 g/mol</td><td><span class="pill p-lh">lig. de H</span></td><td class="num">97 °C</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Leitura:</strong> éter dimetílico e etanol são <strong>isômeros</strong> (os dois são C<sub>2</sub>H<sub>6</sub>O, mesma massa 46 g/mol). Mesmo assim, a diferença de TE é de mais de 100 °C! A única coisa que muda é o tipo de força: o etanol tem O–H (faz LH), o éter não. Observe também que a propanona, <strong>mais pesada</strong> (58 g/mol), ferve <strong>abaixo</strong> do etanol (46 g/mol): o tipo de força pesa mais do que uma pequena diferença de massa. Conclusão do seu caderno: <strong>↑ FIM ↑ TE</strong>.</p>
+
+  <!-- Fator B -->
+  <h4>Fator B — O tamanho da cadeia</h4>
+  <p class="src">Apostila: “Séries de moléculas com mesma função orgânica mas tamanhos diferentes”.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Série (FIM principal)</th><th class="c">1 C</th><th class="c">2 C</th><th class="c">3 C</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hidrocarbonetos</strong> <span class="pill p-lon">London</span></td><td class="c">CH<sub>4</sub><br><span class="mono">−161,5 °C</span></td><td class="c">H<sub>3</sub>C–CH<sub>3</sub><br><span class="mono">−88,4 °C</span></td><td class="c">H<sub>3</sub>C–CH<sub>2</sub>–CH<sub>3</sub><br><span class="mono">−42,5 °C</span></td></tr>
+        <tr><td><strong>Aldeídos</strong> <span class="pill p-dd">dipolo-dipolo</span></td><td class="c">H–CHO<br><span class="mono">−19 °C</span></td><td class="c">H<sub>3</sub>C–CHO<br><span class="mono">20,0 °C</span></td><td class="c">H<sub>3</sub>C–CH<sub>2</sub>–CHO<br><span class="mono">48,8 °C</span></td></tr>
+        <tr><td><strong>Álcoois</strong> <span class="pill p-lh">lig. de H</span></td><td class="c">H<sub>3</sub>C–OH<br><span class="mono">64,5 °C</span></td><td class="c">H<sub>3</sub>C–CH<sub>2</sub>–OH<br><span class="mono">78,3 °C</span></td><td class="c">H<sub>3</sub>C–CH<sub>2</sub>–CH<sub>2</sub>–OH<br><span class="mono">97,2 °C</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Leitura em linha (→):</strong> dentro de cada função, a TE sobe conforme a cadeia cresce. Mais carbonos = mais superfície e mais elétrons = <strong>mais London</strong>, que se soma à força do grupo funcional. Seu caderno: <strong>↑ cadeia (porção apolar) = ↑ FIM = ↑ TE</strong>.</p>
+  <p><strong>Leitura em coluna (↓):</strong> com o mesmo número de carbonos, <strong>álcool &gt; aldeído &gt; hidrocarboneto</strong> — é a escala London &lt; dipolo-dipolo &lt; LH aparecendo nos números.</p>
+  <div class="box note">
+    <span class="label">Cuidado ao ler a coluna</span>
+    <p>As moléculas de uma mesma coluna têm o mesmo nº de carbonos, mas <strong>não</strong> a mesma massa (CH<sub>4</sub> = 16, HCHO = 30, CH<sub>3</sub>OH = 32 g/mol). Mesmo assim, a diferença de TE é grande demais para ser explicada só pela massa: é o tipo de força que domina.</p>
+  </div>
+
+  <!-- Fator C -->
+  <h4>Fator C — Ramificação (isômeros)</h4>
+  <div class="box def">
+    <span class="label">Definição (seu caderno)</span>
+    <p><strong>Isômeros</strong> ⟹ mesma fórmula molecular, diferentes estruturas.</p>
+  </div>
+  <p class="src">Apostila: “Séries de moléculas com mesma função orgânica e fórmula molecular” — C<sub>5</sub>H<sub>12</sub>.</p>
+
+  <figure>
+    <svg viewBox="0 0 760 200" role="img" aria-label="Estruturas em bastão dos três isômeros de C5H12 e suas temperaturas de ebulição">
+      <g fill="none" stroke="#2a251f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polyline points="40,110 85,80 130,110 175,80 220,110"/>
+        <polyline points="310,115 355,85 400,115 445,85"/>
+        <line x1="355" y1="85" x2="355" y2="40"/>
+        <line x1="620" y1="85" x2="580" y2="50"/><line x1="620" y1="85" x2="660" y2="50"/>
+        <line x1="620" y1="85" x2="580" y2="120"/><line x1="620" y1="85" x2="660" y2="120"/>
+      </g>
+      <g font-family="Fraunces,Georgia,serif" font-weight="700" font-size="16" fill="#2a251f" text-anchor="middle">
+        <text x="130" y="152">n-pentano</text><text x="378" y="152">2-metilbutano</text><text x="620" y="152">2,2-dimetilpropano</text>
+      </g>
+      <g font-family="JetBrains Mono,monospace" font-size="15" fill="#b24a24" text-anchor="middle" font-weight="600">
+        <text x="130" y="178">TE = 36,1 °C</text><text x="378" y="178">TE = 27,8 °C</text><text x="620" y="178">TE = 9,5 °C</text>
+      </g>
+      <g font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62" text-anchor="middle">
+        <text x="130" y="30">CH₃–CH₂–CH₂–CH₂–CH₃</text><text x="400" y="30">(CH₃)₂CH–CH₂–CH₃</text><text x="620" y="30">C(CH₃)₄</text>
+      </g>
+    </svg>
+    <figcaption>Os três isômeros de C₅H₁₂ da apostila. Cada vértice/ponta do bastão é um carbono. Mesma massa (72 g/mol), mesma força (London) — só a forma muda.</figcaption>
+  </figure>
+
+  <p>Todos são hidrocarbonetos (só London) e têm exatamente a mesma massa. Então por que a TE cai de 36,1 °C para 9,5 °C? Pela <strong>forma</strong>:</p>
+  <ul>
+    <li>O <strong>n-pentano</strong> é comprido, como um espaguete. Duas moléculas encostam “ao longo” uma da outra → grande <strong>área de contato</strong> → muitos pontos de London.</li>
+    <li>O <strong>2,2-dimetilpropano</strong> é compacto, quase uma bolinha. Duas bolinhas só se tocam em um pontinho → pouca área de contato → London fraca.</li>
+  </ul>
+  <div class="box key">
+    <span class="label">Cadeia de raciocínio (seu caderno)</span>
+    <p><strong>↑ ramificação ⟹ ↓ área de contato ⟹ ↓ FIM ⟹ ↓ TE</strong></p>
+  </div>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão: aprofundamento (fusão ≠ ebulição)</span>
+    <p>Essa regra vale para a <strong>ebulição</strong>. Para a <strong>fusão</strong>, a simetria também conta: moléculas muito simétricas se encaixam melhor no sólido. O 2,2-dimetilpropano funde a cerca de −17 °C, enquanto o n-pentano funde a cerca de −130 °C — o inverso da ordem de TE. Se uma questão pedir ponto de fusão de isômeros, não aplique a regra da ramificação no automático.</p>
+  </div>
+
+  <!-- Fator D -->
+  <h4>Fator D — Posição do grupo funcional (impedimento estérico)</h4>
+  <p class="src">Apostila: “OBS. Efeito do impedimento estérico na posição do grupo funcional”.</p>
+
+  <figure>
+    <svg viewBox="0 0 760 210" role="img" aria-label="Butan-1-ol com OH na ponta e butan-2-ol com OH no meio da cadeia">
+      <g fill="none" stroke="#2a251f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polyline points="50,120 95,90 140,120 185,90 222,112"/>
+        <polyline points="450,95 495,125 540,95 585,125"/>
+        <line x1="540" y1="95" x2="540" y2="58"/>
+      </g>
+      <circle cx="246" cy="118" r="22" fill="#fbe4e1" stroke="#b3261e" stroke-width="2"/>
+      <text x="246" y="124" text-anchor="middle" font-family="Hanken Grotesk,Arial" font-weight="700" font-size="16" fill="#b3261e">OH</text>
+      <g stroke="#b3261e" stroke-width="2" stroke-linecap="round">
+        <line x1="276" y1="118" x2="292" y2="118"/><line x1="268" y1="96" x2="280" y2="86"/><line x1="268" y1="140" x2="280" y2="150"/><line x1="246" y1="88" x2="246" y2="76"/>
+      </g>
+      <circle cx="540" cy="38" r="22" fill="#fbe4e1" stroke="#b3261e" stroke-width="2"/>
+      <text x="540" y="44" text-anchor="middle" font-family="Hanken Grotesk,Arial" font-weight="700" font-size="16" fill="#b3261e">OH</text>
+      <g font-family="Fraunces,Georgia,serif" font-weight="700" font-size="16" fill="#2a251f" text-anchor="middle">
+        <text x="160" y="170">butan-1-ol (OH na ponta)</text><text x="518" y="170">butan-2-ol (OH no meio) *</text>
+      </g>
+      <g font-family="JetBrains Mono,monospace" font-size="15" fill="#b24a24" text-anchor="middle" font-weight="600">
+        <text x="160" y="196">TE = 117,7 °C</text><text x="518" y="196">TE = 99,4 °C</text>
+      </g>
+    </svg>
+    <figcaption>Redesenho da apostila. Os “raios” em volta do OH (como você desenhou) indicam que ele está livre para interagir. * Identificação provável: o desenho da foto está pouco nítido; a TE de 99,4 °C corresponde à do butan-2-ol.</figcaption>
+  </figure>
+
+  <p>As duas moléculas são isômeros (C<sub>4</sub>H<sub>10</sub>O), ambas são álcoois (fazem LH) e têm o mesmo tamanho. A diferença é <strong>onde</strong> está o OH:</p>
+  <ul>
+    <li>No <strong>butan-1-ol</strong>, o OH está na ponta da cadeia, <strong>exposto</strong>. As moléculas vizinhas chegam fácil até ele → as ligações de hidrogênio se formam bem.</li>
+    <li>No <strong>butan-2-ol</strong>, o OH está no meio, <strong>cercado</strong> pelos grupos CH<sub>3</sub> e CH<sub>2</sub>, que “atrapalham” a aproximação. Esse bloqueio por grupos volumosos se chama <strong>impedimento estérico</strong> (estérico = relativo ao espaço ocupado pelos átomos).</li>
+  </ul>
+  <div class="box key">
+    <span class="label">Cadeia de raciocínio (seu caderno)</span>
+    <p><strong>↓ impedimento estérico ⟹ ↑ acessibilidade para interação (FIM) ⟹ ↑ FIM ⟹ ↑ TE</strong></p>
+  </div>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão:</span>
+    <p>O terceiro álcool dessa família, o <strong>2-metilpropan-2-ol</strong> (terc-butanol, OH num carbono ligado a três outros carbonos), ferve a cerca de <strong>82 °C</strong>. A tendência fica: <strong>álcool primário &gt; secundário &gt; terciário</strong> em TE, entre isômeros. Nesse caso, a molécula também é mais ramificada (fator C) — os dois efeitos atuam juntos.</p>
+  </div>
+
+  <!-- Fator E -->
+  <h4>Fator E — Número de ligações de hidrogênio: o dímero dos ácidos carboxílicos</h4>
+  <p class="src">Apostila: “Complemento e Conexões — O dímero de ácidos carboxílicos”.</p>
+  <p>Cada molécula de ácido carboxílico (R–COOH) tem <strong>dois pontos de ligação</strong>: a carbonila (C=O), que <strong>recebe</strong> H, e a hidroxila (O–H), que <strong>doa</strong> H. Duas moléculas se encaixam “de frente” formando <strong>duas ligações de hidrogênio simultâneas</strong> — o <strong>dímero cíclico</strong>:</p>
+<pre class="scheme">                <span class="a">ligação de hidrogênio</span>
+                        ↓
+              O <span class="a">·········</span> H — O
+            //                  \
+  H₃C — C                        C — CH₃
+            \                  //
+              O — H <span class="a">·········</span> O
+                        ↑
+                <span class="a">ligação de hidrogênio</span>
+
+  <span class="g">duas moléculas de ácido acético "de mãos dadas" = dímero cíclico</span></pre>
+  <p><strong>Consequência (apostila):</strong> essa associação contribui para que os ácidos carboxílicos tenham TE <strong>geralmente superiores às dos álcoois de massa molar comparável</strong>.</p>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão:</span>
+    <p>O <strong>ácido acético</strong> (CH<sub>3</sub>COOH, 60 g/mol) ferve a cerca de <strong>118 °C</strong>. O <strong>propan-1-ol</strong> (60 g/mol, da tabela acima) ferve a <strong>97 °C</strong>. Mesma massa, os dois fazem LH — mas o ácido faz <strong>mais e melhores</strong> ligações de hidrogênio (dímero). Pela mesma lógica, cada OH a mais numa molécula (dióis, trióis) também aumenta a TE.</p>
+  </div>
+
+  <h4>Roteiro para comparar TE em qualquer questão</h4>
+<pre class="scheme"><span class="y">1.</span> As moléculas têm tamanho/massa COMPARÁVEL?
+     └─ não → cuidado: a maior pode vencer mesmo com força "mais fraca"
+<span class="y">2.</span> Qual a FIM MAIS FORTE que cada uma faz?
+     <span class="b">London</span>  &lt;  <span class="b">dipolo-dipolo</span>  &lt;  <span class="a">ligação de H</span>        → maior força = maior TE
+<span class="y">3.</span> Mesmo tipo de força?  → conte os grupos (2 OH &gt; 1 OH; ácido-dímero &gt; álcool)
+<span class="y">4.</span> Mesmo grupo?         → cadeia MAIOR = mais London = maior TE
+<span class="y">5.</span> Mesmo tamanho (isômeros)?
+     ├─ menos RAMIFICADA  → mais área de contato → maior TE
+     └─ grupo mais EXPOSTO (menos impedimento estérico) → maior TE</pre>
+</section>
+
+<!-- ---------- 2.4 SOLUBILIDADE ---------- -->
+<section id="solubilidade">
+  <h3><span class="tag">2.4 · Apostila — “2. Solubilidade”</span>Solubilidade: “semelhante tende a dissolver semelhante”</h3>
+
+  <p>Dissolver é <strong>misturar moléculas diferentes</strong> até formar uma única fase. Isso só acontece se as moléculas do soluto e do solvente conseguirem se atrair <strong>tão bem quanto</strong> se atraíam antes, cada uma com as suas iguais.</p>
+  <div class="grid2">
+    <div class="mini"><h5>Polar dissolve polar</h5><p>Água (polar, LH) dissolve etanol, açúcar, sal.</p></div>
+    <div class="mini"><h5>Apolar dissolve apolar</h5><p>Hexano (apolar, London) dissolve óleo, gordura, gasolina.</p></div>
+  </div>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão: por que o óleo não entra na água?</span>
+    <p>As moléculas de água estão presas umas às outras por uma rede de ligações de hidrogênio. Para uma molécula de óleo entrar, ela teria que quebrar parte dessa rede — e, em troca, só oferece London, muito mais fraca. A água “prefere” continuar ligada a si mesma e expulsa o óleo. Não é que água e óleo se repelem: é que a água se atrai muito mais consigo mesma.</p>
+  </div>
+
+  <h4>Vocabulário da balança (apostila + seu caderno)</h4>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Parte da molécula</th><th>Nome</th><th>Significado</th><th>Tem afinidade com…</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Porção apolar</strong> (cadeia carbônica)</td><td>Lipofílica / Hidrofóbica</td><td>“ama gordura” / “tem aversão à água”</td><td>solventes apolares (hexano, gasolina, óleo)</td></tr>
+        <tr><td><strong>Porção polar</strong> (OH, COOH, NH<sub>2</sub>, parte iônica…)</td><td>Hidrofílica / Lipofóbica</td><td>“ama água” / “tem aversão à gordura”</td><td>solventes polares (água)</td></tr>
+        <tr class="hl-row"><td><strong>Molécula com as duas porções</strong></td><td>Anfifílica ou anfipática</td><td>“ama os dois”</td><td>pode interagir com os dois tipos de solvente</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>A apostila desenha uma <strong>balança</strong>: de um lado a porção apolar, do outro a porção polar. A solubilidade em água depende de <strong>para que lado a balança pende</strong>.</p>
+
+  <div class="box key">
+    <span class="label">A solubilidade (em água) resulta do balanço entre…</span>
+    <p><strong>↑ porção polar* ⟹ ↑ solubilidade</strong><br>
+    <strong>↑ porção apolar ⟹ ↓ solubilidade</strong></p>
+    <p>* <em>Inclui o nº de regiões polares e a intensidade da FIM feita com a H<sub>2</sub>O</em> (anotação do seu caderno). Ou seja: não basta ter <em>uma</em> região polar — conta <strong>quantas</strong> são e <strong>quão forte</strong> é a interação de cada uma com a água (LH &gt; dipolo-dipolo).</p>
+  </div>
+
+  <!-- Caso 1 -->
+  <h4>Caso 1 — Monoálcool em água / hexano</h4>
+  <p>O etanol é o exemplo perfeito de molécula anfifílica:</p>
+<pre class="scheme">                      <span class="y">ETANOL</span>
+          ┌──────────────────┬────────┐
+          │   CH₃ — CH₂ —    │   OH   │
+          └────────┬─────────┴───┬────┘
+   <span class="b">parte apolar (hidrofóbica)</span>   <span class="a">parte polar (hidrofílica)</span>
+         <span class="b">→ dispersão de London</span>       <span class="a">→ ligação de hidrogênio</span>
+                   │                 │
+         é solúvel em ↓              ↓ é solúvel em
+   <span class="b">CH₃–CH₂–CH₂–CH₂–CH₂–CH₃</span>  ◄─ insolúveis ─►  <span class="a">H–O–H</span>
+          <span class="b">hexano (apolar)</span>                        <span class="a">água (polar)</span></pre>
+  <p>Por isso o etanol se mistura <strong>tanto</strong> com hexano (pela cadeia) <strong>quanto</strong> com água (pelo OH) — enquanto hexano e água não se misturam entre si. Seu caderno liga esse caso ao <strong>teste da gasolina</strong> (Caso 3).</p>
+
+  <p>E se a cadeia crescer? A apostila mostra:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Álcool</th><th class="c">Nº de C</th><th class="num">Solubilidade em água (g / 100 g de água)</th></tr></thead>
+      <tbody>
+        <tr><td>metanol</td><td class="c">1</td><td class="num">infinita</td></tr>
+        <tr><td>etanol</td><td class="c">2</td><td class="num">infinita</td></tr>
+        <tr><td>propan-1-ol</td><td class="c">3</td><td class="num">infinita</td></tr>
+        <tr class="hl-row"><td>butan-1-ol</td><td class="c">4</td><td class="num">7,9</td></tr>
+        <tr><td>pentan-1-ol</td><td class="c">5</td><td class="num">2,2</td></tr>
+        <tr><td>hexan-1-ol</td><td class="c">6</td><td class="num">0,6</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>“Infinita” significa que se misturam <strong>em qualquer proporção</strong> (são <strong>miscíveis</strong>). Todos têm <strong>um</strong> OH só — mas a cadeia apolar vai crescendo. Até 3 carbonos, o OH “dá conta” de puxar a molécula para a água. A partir de 4, a porção apolar começa a vencer a balança e a solubilidade despenca.</p>
+  <div class="grid2">
+    <div class="box warn" style="margin:0"><span class="label">Seu caderno</span><p><strong>↑ cadeia ⟹ ↑ contribuição apolar ⟹ ↓ solubilidade em H<sub>2</sub>O</strong></p></div>
+    <div class="box key" style="margin:0"><span class="label">Seu caderno</span><p><strong>↑ OH ⟹ ↑ contribuição polar ⟹ ↑ solubilidade em H<sub>2</sub>O</strong></p></div>
+  </div>
+
+  <!-- Caso 2 -->
+  <h4>Caso 2 — Poliálcoois em água</h4>
+  <div class="box note"><span class="label">Na sua foto</span><p>O espaço do Caso 2 está <strong>em branco</strong> (sem anotações nem texto impresso visível). O conteúdo abaixo é o que se espera desse caso, a partir da regra “↑ OH ↑ solubilidade” do próprio caderno.</p></div>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão:</span>
+    <p><strong>Poliálcoois</strong> (ou polióis) têm <strong>dois ou mais grupos OH</strong>. Cada OH é mais uma região que faz ligação de hidrogênio com a água → a balança pende muito para o lado polar.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Comparação</th><th>Grupos OH</th><th>Solubilidade em água</th></tr></thead>
+        <tbody>
+          <tr><td>butan-1-ol (4 C)</td><td class="c">1</td><td>7,9 g/100 g (apostila)</td></tr>
+          <tr><td>butano-1,4-diol (4 C)</td><td class="c">2</td><td>miscível (infinita)</td></tr>
+          <tr><td>etano-1,2-diol — etilenoglicol (anticongelante)</td><td class="c">2</td><td>miscível</td></tr>
+          <tr><td>propano-1,2,3-triol — glicerol/glicerina</td><td class="c">3</td><td>miscível</td></tr>
+          <tr><td>glicose (6 C)</td><td class="c">5</td><td>muito solúvel</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Mesmo tamanho de cadeia (4 C), um OH a mais transforma “pouco solúvel” em “miscível”. Mais OH também significa <strong>TE maior</strong> (mais LH entre as próprias moléculas): o glicerol ferve a ~290 °C e é um líquido viscoso. Uma estimativa usada em livros de Química Orgânica: cada grupo polar capaz de LH “carrega” para a água algo em torno de 3 a 4 carbonos — é uma aproximação, não uma lei.</p>
+  </div>
+
+  <!-- Caso 3 -->
+  <h4>Caso 3 — Gasolina, etanol e água</h4>
+  <p>A gasolina brasileira (gasolina C) contém etanol anidro misturado. A gasolina é uma mistura de hidrocarbonetos (<strong>apolar</strong>). O etanol, como vimos, se dá bem com os dois lados. O que acontece se adicionarmos água e agitarmos?</p>
+
+  <figure>
+    <svg viewBox="0 0 760 290" role="img" aria-label="Proveta antes e depois de agitar gasolina com água">
+      <!-- antes -->
+      <text x="190" y="22" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="700" font-size="15" fill="#2a251f">Antes de agitar</text>
+      <rect x="160" y="80" width="60" height="85" fill="#f6d78c"/>
+      <rect x="160" y="165" width="60" height="85" fill="#bcd9f1"/>
+      <path d="M160,40 L160,250 Q160,262 172,262 L208,262 Q220,262 220,250 L220,40" fill="none" stroke="#2a251f" stroke-width="2.5"/>
+      <g font-family="JetBrains Mono,monospace" font-size="12" fill="#2a251f">
+        <text x="232" y="118">gasolina + etanol</text><text x="232" y="134">50 mL</text>
+        <text x="232" y="203">água</text><text x="232" y="219">50 mL</text>
+      </g>
+      <!-- seta -->
+      <text x="400" y="160" text-anchor="middle" font-family="Hanken Grotesk,Arial" font-weight="700" font-size="16" fill="#b24a24">agitar e esperar</text>
+      <line x1="345" y1="172" x2="455" y2="172" stroke="#b24a24" stroke-width="2.5"/>
+      <path d="M455,166 L467,172 L455,178 z" fill="#b24a24"/>
+      <!-- depois -->
+      <text x="560" y="22" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="700" font-size="15" fill="#2a251f">Depois (repouso)</text>
+      <rect x="530" y="80" width="60" height="60" fill="#f6d78c"/>
+      <rect x="530" y="140" width="60" height="110" fill="#b7cfe8"/>
+      <path d="M530,40 L530,250 Q530,262 542,262 L578,262 Q590,262 590,250 L590,40" fill="none" stroke="#2a251f" stroke-width="2.5"/>
+      <g font-family="JetBrains Mono,monospace" font-size="12" fill="#2a251f">
+        <text x="602" y="108">gasolina (sem etanol)</text><text x="602" y="124">≈ 35 mL</text>
+        <text x="602" y="190">água + álcool</text><text x="602" y="206">≈ 65 mL</text>
+      </g>
+      <text x="380" y="284" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62">fase de cima: menos densa (gasolina) · fase de baixo: mais densa (água + etanol)</text>
+    </svg>
+    <figcaption>Teste da proveta. Números ilustrativos para uma gasolina com 30% de etanol: a fase aquosa “cresce” exatamente o volume de etanol que migrou.</figcaption>
+  </figure>
+
+  <div class="box key">
+    <span class="label">Explicação (seu caderno)</span>
+    <p><strong>O álcool migra para a água por realizar força intermolecular mais intensa com esse solvente.</strong> Com a gasolina, o etanol só faz London (pela cadeia); com a água, faz <strong>ligação de hidrogênio</strong> (pelo OH), que é bem mais forte. Na “disputa” pelo etanol, a água vence.</p>
+  </div>
+
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão: o teste na prática e a conta</span>
+    <p>Esse é o <strong>teste da proveta</strong> que postos são obrigados a fazer quando o consumidor pede. Mistura-se <strong>50 mL de gasolina</strong> com <strong>50 mL de água</strong> (no método oficial, uma solução aquosa de NaCl, que ajuda as fases a se separarem bem), agita-se e espera-se separar.</p>
+    <p><strong>A conta:</strong> o aumento de volume da fase aquosa = volume de etanol que estava na gasolina.</p>
+    <p class="mono" style="display:inline-block">% etanol = (V<sub>aquosa final</sub> − 50) ÷ 50 × 100</p>
+    <p>Exemplo: fase aquosa foi de 50 mL para 65 mL → 15 mL de etanol em 50 mL de gasolina → <strong>30%</strong>. Desde agosto de 2025, a mistura obrigatória no Brasil é de 30% de etanol anidro na gasolina comum (“E30”); antes, era 27%. Em questões antigas você verá 20–25%, porque o valor muda por lei — use sempre o número que o enunciado der.</p>
+  </div>
+
+  <!-- Tensoativos -->
+  <h4>Tensoativos — a molécula anfifílica mais famosa</h4>
+  <p>A apostila cita os <strong>tensoativos (agentes emulsificantes)</strong> na coluna de íon-dipolo, falando da “hidratação das regiões iônicas dos tensoativos”.</p>
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão:</span>
+    <p>Um sabão é, por exemplo, R–COO<sup>−</sup>Na<sup>+</sup>, com R = cadeia longa (uns 12 a 18 carbonos). Ele tem:</p>
+    <ul>
+      <li>uma <strong>cabeça iônica</strong> (–COO<sup>−</sup>), hidrofílica → interage com a água por <strong>íon-dipolo</strong>;</li>
+      <li>uma <strong>cauda longa apolar</strong>, lipofílica → interage com a gordura por <strong>London</strong>.</li>
+    </ul>
+    <p>Na água com gordura, as caudas “entram” na gordura e as cabeças ficam viradas para a água, formando esferas chamadas <strong>micelas</strong>, com a gordura presa no meio. Como o lado de fora da micela é iônico, ela é levada pela água no enxágue.</p>
+  </div>
+  <figure>
+    <svg viewBox="0 0 760 250" role="img" aria-label="Micela de sabão com gordura no centro">
+      <rect x="0" y="0" width="760" height="250" fill="#eaf3fb" rx="10"/>
+      <circle cx="200" cy="125" r="44" fill="#f6d78c"/>
+      <text x="200" y="130" text-anchor="middle" font-family="Hanken Grotesk,Arial" font-weight="700" font-size="14" fill="#6b4e00">gordura</text>
+      <polyline points="286.0,120.0 278.0,130.0 270.0,120.0 262.0,130.0 254.0,120.0 246.0,130.0" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="295.0" cy="125.0" r="8" fill="#b24a24"/>
+      <polyline points="279.7,157.8 268.1,163.3 265.2,150.9 253.7,156.4 250.8,143.9 239.3,149.5" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="285.6" cy="166.2" r="8" fill="#b24a24"/>
+      <polyline points="257.5,189.1 244.7,189.1 247.6,176.6 234.7,176.6 237.6,164.1 224.8,164.1" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="259.2" cy="199.3" r="8" fill="#b24a24"/>
+      <polyline points="224.0,207.7 212.5,202.2 220.5,192.1 208.9,186.6 216.9,176.5 205.4,171.0" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="221.1" cy="217.6" r="8" fill="#b24a24"/>
+      <polyline points="185.7,210.0 177.8,199.9 189.3,194.4 181.3,184.3 192.9,178.8 184.9,168.7" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="178.9" cy="217.6" r="8" fill="#b24a24"/>
+      <polyline points="150.3,195.4 147.5,182.9 160.3,182.8 157.4,170.4 170.2,170.3 167.4,157.8" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="140.8" cy="199.3" r="8" fill="#b24a24"/>
+      <polyline points="124.7,166.8 127.6,154.3 139.1,159.9 142.0,147.4 153.5,152.9 156.4,140.5" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="114.4" cy="166.2" r="8" fill="#b24a24"/>
+      <polyline points="114.0,130.0 122.0,120.0 130.0,130.0 138.0,120.0 146.0,130.0 154.0,120.0" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="105.0" cy="125.0" r="8" fill="#b24a24"/>
+      <polyline points="120.3,92.2 131.9,86.7 134.8,99.1 146.3,93.6 149.2,106.1 160.7,100.5" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="114.4" cy="83.8" r="8" fill="#b24a24"/>
+      <polyline points="142.5,60.9 155.3,60.9 152.4,73.4 165.3,73.4 162.4,85.9 175.2,85.9" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="140.8" cy="50.7" r="8" fill="#b24a24"/>
+      <polyline points="176.0,42.3 187.5,47.8 179.5,57.9 191.1,63.4 183.1,73.5 194.6,79.0" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="178.9" cy="32.4" r="8" fill="#b24a24"/>
+      <polyline points="214.3,40.0 222.2,50.1 210.7,55.6 218.7,65.7 207.1,71.2 215.1,81.3" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="221.1" cy="32.4" r="8" fill="#b24a24"/>
+      <polyline points="249.7,54.6 252.5,67.1 239.7,67.2 242.6,79.6 229.8,79.7 232.6,92.2" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="259.2" cy="50.7" r="8" fill="#b24a24"/>
+      <polyline points="275.3,83.2 272.4,95.7 260.9,90.1 258.0,102.6 246.5,97.1 243.6,109.5" fill="none" stroke="#2d5a86" stroke-width="2"/>
+      <circle cx="285.6" cy="83.8" r="8" fill="#b24a24"/>
+      <circle cx="400" cy="70" r="8" fill="#b24a24"/><text x="416" y="68" font-family="Hanken Grotesk,Arial" font-size="14" fill="#2a251f"><tspan x="416">cabeça iônica (–COO⁻): hidrofílica</tspan><tspan x="416" dy="17">→ íon-dipolo com a água</tspan></text>
+      <polyline points="392,112 400,106 408,112 416,106 424,112" fill="none" stroke="#2d5a86" stroke-width="2"/><text x="432" y="113" font-family="Hanken Grotesk,Arial" font-size="14" fill="#2a251f"><tspan x="432">cauda apolar: lipofílica</tspan><tspan x="432" dy="17">→ London com a gordura</tspan></text>
+      <rect x="392" y="156" width="16" height="16" rx="8" fill="#f6d78c"/><text x="416" y="169" font-family="Hanken Grotesk,Arial" font-size="14" fill="#2a251f">gordura presa no centro da micela</text>
+      <text x="392" y="210" font-family="JetBrains Mono,monospace" font-size="12" fill="#7a6f62">fundo azul = água</text>
+    </svg>
+    <figcaption>Micela (corte). As caudas “mergulham” na gordura; as cabeças ficam na água. Por fora, a micela é iônica e é arrastada no enxágue.</figcaption>
+  </figure>
+
+  <!-- Resumindo -->
+  <h4>Resumindo… (quadro da apostila)</h4>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:34%">Funções</th><th>Comportamento</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hidrocarbonetos</strong></td><td>Moléculas apolares, nas quais predominam as dispersões de London. Insolúveis em água e apresentam maior afinidade por solventes apolares.</td></tr>
+        <tr><td><strong>Álcoois, fenóis, ácidos carboxílicos, aminas e amidas</strong></td><td>Apresentam grupos polares capazes de formar ligações de hidrogênio com a água. Os compostos de menor cadeia carbônica tendem a ser mais solúveis. À medida que a porção apolar aumenta, a solubilidade em água geralmente diminui.</td></tr>
+        <tr><td><strong>Éteres, aldeídos, cetonas e ésteres</strong></td><td>São moléculas polares e seus átomos de oxigênio podem receber ligações de hidrogênio da água. Entretanto, não formam ligações de hidrogênio entre suas próprias moléculas. A solubilidade em água diminui gradualmente com o aumento da cadeia carbônica.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box exam">
+    <span class="label">A linha mais traiçoeira do quadro</span>
+    <p>Éteres, aldeídos, cetonas e ésteres <strong>não fazem LH entre si</strong> (por isso têm TE mais baixa que álcoois), mas <strong>recebem LH da água</strong> (o O deles tem par não ligante — é <em>aceitador</em>; a água entra como <em>doadora</em>). Por isso os pequenos são bem solúveis: a <strong>propanona (acetona) é miscível com água</strong>, mesmo tendo TE de apenas 56 °C.</p>
+    <p><strong>Moral:</strong> TE depende da força entre moléculas <em>iguais</em>; solubilidade depende da força com o <em>solvente</em>. São perguntas diferentes.</p>
+  </div>
+</section>
+
+<!-- ---------- 2.5 CONEXÕES ---------- -->
+<section id="conexoes">
+  <h3><span class="tag">2.5 · Apostila — “Complemento e Conexões”</span>Conexões práticas: volatilidade no dia a dia</h3>
+  <p>A apostila reforça: <strong>quanto MAIOR a intensidade das forças intermoleculares, MENOR a volatilidade e a pressão de vapor</strong> (a molécula “prefere” ficar no líquido). Três aplicações:</p>
+
+  <div class="grid3">
+    <div class="mini">
+      <h5>Éter etílico — anestésico</h5>
+      <p>Faz London e dipolo-dipolo, mas <strong>não faz LH entre suas próprias moléculas</strong>. Evapora muito rápido à temperatura ambiente — por isso foi um dos primeiros anestésicos inalatórios em cirurgia: basta a pressão de vapor para levar moléculas suficientes ao ar inspirado.</p>
+    </div>
+    <div class="mini">
+      <h5>Álcool em gel — “gela” a pele</h5>
+      <p>O etanol <strong>faz LH</strong>, então evapora mais devagar que o éter, mas ainda rápido o bastante para esfriar a pele ao evaporar (calor latente).</p>
+    </div>
+    <div class="mini">
+      <h5>Perfumes — notas de saída, corpo e fundo</h5>
+      <p>Combinam moléculas de diferentes TE exatamente para controlar a velocidade de evaporação ao longo do dia.</p>
+    </div>
+  </div>
+
+  <div class="box comp">
+    <span class="label">Complemento para melhor compreensão:</span>
+    <ul>
+      <li><strong>Calor latente:</strong> para evaporar, cada molécula precisa de energia para vencer as FIM. Essa energia é “roubada” da pele (vaporização é um processo endotérmico) → a pele esfria. É o mesmo motivo de sentirmos frio ao sair molhados do banho.</li>
+      <li><strong>Números:</strong> o éter etílico (etoxietano) ferve a ~35 °C; o etanol, a ~78 °C. Com a mesma “família” de átomos, a presença do O–H faz toda a diferença.</li>
+      <li><strong>Perfumes:</strong> notas de <em>saída</em> = moléculas mais voláteis (TE mais baixa), sentidas primeiro e que somem rápido; notas de <em>fundo</em> = moléculas maiores e menos voláteis, que permanecem por horas; as de <em>corpo</em> ficam no meio.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 3. ANALOGIAS ================= -->
+<section class="part" id="analogias">
+  <div class="part-head"><span class="part-num">03</span><h2>Exemplos e analogias</h2></div>
+  <p class="lead-in">Imagens mentais para lembrar na hora da prova. Analogias ajudam a lembrar, mas a resposta escrita tem de usar o vocabulário químico.</p>
+
+  <div class="grid2">
+    <div class="mini"><h5>FIM = ímãs entre moléculas</h5><p>Ferver é separar ímãs. Ímãs mais fortes (LH) exigem mais “puxão” (mais temperatura) do que ímãs fracos (London).</p></div>
+    <div class="mini"><h5>Cabo de guerra = vetor μ</h5><p>CCl<sub>4</sub>: quatro pessoas iguais puxando para lados simétricos → a corda não sai do lugar (apolar). Metanol: puxões diferentes e desalinhados → a corda vai para um lado (polar).</p></div>
+    <div class="mini"><h5>London = multidão que se desloca</h5><p>Numa sala, por um instante, mais gente se junta num canto (δ−) e o outro fica vazio (δ+). Isso “empurra” a multidão da sala vizinha. Dura pouco, mas acontece o tempo todo.</p></div>
+    <div class="mini"><h5>Ramificação = espaguete × bolinhas de gude</h5><p>Fios de espaguete se enroscam ao longo de todo o comprimento (muito contato). Bolinhas só se tocam num ponto (pouco contato). n-pentano × 2,2-dimetilpropano.</p></div>
+    <div class="mini"><h5>Impedimento estérico = tomada atrás do armário</h5><p>O OH do butan-1-ol é uma tomada na parede livre. O do butan-2-ol está meio escondido atrás dos móveis (CH<sub>3</sub>, CH<sub>2</sub>): dá para usar, mas com menos eficiência.</p></div>
+    <div class="mini"><h5>Dímero = aperto de mão com as duas mãos</h5><p>Álcool cumprimenta com uma mão (1 LH). Dois ácidos carboxílicos se cumprimentam com as duas mãos ao mesmo tempo (2 LH) — muito mais difícil de separar.</p></div>
+    <div class="mini"><h5>Etanol = aluno bilíngue</h5><p>Conversa com o grupo da água pelo OH e com o grupo da gasolina pela cadeia. Mas, se puder escolher, fica com quem a conversa é mais intensa (a água, pela LH) — Caso 3.</p></div>
+    <div class="mini"><h5>Solubilidade = balança</h5><p>Cada C na cadeia é um peso no prato apolar; cada OH é um peso grande no prato polar. Até ~3 C, um OH segura a balança; com 4 ou mais, ela tomba para o lado apolar.</p></div>
+  </div>
+
+  <h4>Exemplos do cotidiano</h4>
+  <ul>
+    <li><strong>Óleo e vinagre</strong> separam na salada: óleo (apolar) × água do vinagre (polar).</li>
+    <li><strong>Acetona tira esmalte e mistura com água</strong>: é polar e aceita LH da água (quadro “Resumindo”).</li>
+    <li><strong>Gasolina “batizada”</strong>: detectada pelo teste da proveta (Caso 3).</li>
+    <li><strong>Gás de cozinha</strong> (propano/butano, só London, cadeias pequenas) é gás à temperatura ambiente; a <strong>parafina</strong> (hidrocarboneto de cadeia enorme, também só London) é sólida. Mesmo tipo de força, tamanhos muito diferentes.</li>
+    <li><strong>Glicerina</strong> em cosméticos: 3 OH → muito solúvel em água e pouco volátil (retém umidade na pele).</li>
+  </ul>
+</section>
+
+<!-- ================= 4. ESQUEMAS ================= -->
+<section class="part" id="esquemas">
+  <div class="part-head"><span class="part-num">04</span><h2>Esquemas e desenhos em texto</h2></div>
+  <p class="lead-in">A aula inteira em quatro diagramas. Os desenhos de moléculas estão nos tópicos da seção 2.</p>
+
+  <h4>Esquema 1 — Qual força a molécula faz?</h4>
+<pre class="scheme">                    A molécula tem íon (carga inteira) + solvente polar?
+                         │ sim → <span class="a">ÍON-DIPOLO</span> (sais em água, cabeça do sabão)
+                         │ não
+                         ▼
+             Tem H ligado DIRETAMENTE a F, O ou N?
+                         │ sim → <span class="a">LIGAÇÃO DE HIDROGÊNIO</span>
+                         │        (ác. carboxílico, álcool, enol, fenol, amina/amida 1ª e 2ª, ác. sulfônico)
+                         │ não
+                         ▼
+                  A molécula é polar? (Σμ ≠ 0)
+                         │ sim → <span class="b">DIPOLO-DIPOLO</span>
+                         │        (éter, aldeído, cetona, éster, anidrido, nitrila, nitro,
+                         │         tiocomposto, amina/amida 3ª)
+                         │ não
+                         ▼
+                   <span class="g">SÓ DISPERSÕES DE LONDON</span> (hidrocarbonetos, CCl₄, CF₄)
+
+   <span class="y">* London existe em TODAS — nas polares ela se soma às outras.</span></pre>
+
+  <h4>Esquema 2 — Polar ou apolar? (regra prática)</h4>
+<pre class="scheme">  conte as NUVENS do átomo central  (simples = dupla = tripla = par não ligante = 1)
+  conte os LIGANTES IGUAIS
+
+      nuvens = ligantes iguais   ──►  <span class="g">APOLAR</span>   (CO₂, CH₄, CCl₄, BF₃)
+      nuvens ≠ ligantes iguais   ──►  <span class="a">POLAR</span>    (H₂O, NH₃, CH₃Cl, HCN)</pre>
+
+  <h4>Esquema 3 — Tudo o que mexe na TE</h4>
+<pre class="scheme">                      ┌─────────────────────────────┐
+                      │  <span class="y">FIM ↑  =  TE ↑  =  Pvapor ↓</span>  │
+                      └──────────────┬──────────────┘
+      ┌──────────────┬───────────────┼────────────────┬────────────────┐
+      ▼              ▼               ▼                ▼                ▼
+ <span class="a">tipo de força</span>   <span class="a">cadeia maior</span>    <span class="b">ramificação</span>      <span class="b">grupo escondido</span>   <span class="a">mais grupos LH</span>
+ LH &gt; dd &gt; Lon   mais London     menos contato    imped. estérico    dímero / 2 OH
+    TE ↑            TE ↑            TE ↓              TE ↓              TE ↑</pre>
+
+  <h4>Esquema 4 — Vai dissolver em água?</h4>
+<pre class="scheme">           <span class="b">PRATO APOLAR</span>                         <span class="a">PRATO POLAR</span>
+      (cadeia carbônica, cada C)   &lt;&gt;    (OH, COOH, NH, C=O, íons)
+       lipofílico / hidrofóbico           hidrofílico / lipofóbico
+
+   ↑ cadeia  → balança desce à esquerda  → <span class="b">solubilidade em água ↓</span>
+   ↑ nº de grupos polares / FIM mais forte com a água → <span class="a">solubilidade ↑</span>
+
+   metanol · etanol · propan-1-ol : <span class="g">∞</span>   │   butan-1-ol 7,9   pentan-1-ol 2,2   hexan-1-ol 0,6</pre>
+</section>
+
+<!-- ================= 5. PEGADINHAS ================= -->
+<section class="part" id="pegadinhas">
+  <div class="part-head"><span class="part-num">05</span><h2>Pontos de atenção e pegadinhas</h2></div>
+  <p class="lead-in">Os erros que mais tiram pontos — cada um com a correção.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:4%">#</th><th style="width:44%">Pensamento errado</th><th>Correção</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>“Dupla ligação conta como 2 nuvens.”</td><td>Simples, dupla, tripla e par não ligante contam <strong>1 nuvem cada</strong>. CO<sub>2</sub> tem 2 nuvens.</td></tr>
+        <tr><td>2</td><td>“Tem ligação polar, então a molécula é polar.”</td><td>CO<sub>2</sub> e CCl<sub>4</sub> têm ligações polares e são <strong>apolares</strong>: os vetores se cancelam. Olhe a <strong>soma</strong> (Σμ⃗).</td></tr>
+        <tr><td>3</td><td>“A regra prática vale para qualquer molécula.”</td><td>Vale para <strong>um átomo central</strong>. Em orgânicas maiores, analise simetria (cis × trans).</td></tr>
+        <tr><td>4</td><td>“Moléculas polares não fazem London.”</td><td>London existe em <strong>todas</strong>. Nas apolares é a única.</td></tr>
+        <tr><td>5</td><td>“Tem H e tem O → faz ligação de hidrogênio.”</td><td>O H precisa estar <strong>ligado diretamente</strong> a F, O ou N. Éter e aldeído não fazem LH entre si.</td></tr>
+        <tr><td>6</td><td>“Toda amina/amida faz LH.”</td><td><strong>Terciárias</strong> não têm H no N → dipolo-dipolo (estão nessa coluna na apostila).</td></tr>
+        <tr><td>7</td><td>“LH sempre ganha de London.”</td><td>Só para <strong>tamanhos comparáveis</strong>. Hexano (~69 °C) ferve acima do metanol (~65 °C).</td></tr>
+        <tr><td>8</td><td>“Na ebulição quebram-se as ligações da molécula.”</td><td>Quebram-se as <strong>forças intermoleculares</strong>. A molécula continua inteira no vapor.</td></tr>
+        <tr><td>9</td><td>“Isômeros têm a mesma massa, então a mesma TE.”</td><td>Mesma massa, TE diferentes: tipo de força (éter × álcool), ramificação, posição do grupo.</td></tr>
+        <tr><td>10</td><td>“Mais ramificado → menor ponto de fusão também.”</td><td>A regra é da <strong>ebulição</strong>. Na fusão, a simetria pode inverter (2,2-dimetilpropano funde acima do n-pentano).</td></tr>
+        <tr><td>11</td><td>“Não faz LH entre si → não dissolve em água.”</td><td>Cetonas, aldeídos, éteres e ésteres <strong>recebem</strong> LH da água. Acetona é miscível.</td></tr>
+        <tr><td>12</td><td>“TE alta = pressão de vapor alta.”</td><td>É o <strong>contrário</strong>: FIM ↑ → TE ↑ → pressão de vapor e volatilidade ↓.</td></tr>
+        <tr><td>13</td><td>“O etanol é polar, logo não mistura com gasolina.”</td><td>É anfifílico: mistura com gasolina (cadeia) <strong>e</strong> com água (OH). Com água presente, migra para ela (LH mais forte).</td></tr>
+        <tr><td>14</td><td>“Solubilidade infinita = dissolve muito.”</td><td>Significa <strong>miscível em qualquer proporção</strong> — nunca satura.</td></tr>
+        <tr><td>15</td><td>“A seta do vetor aponta para o δ+.”</td><td>Na convenção usada no seu caderno e na maioria dos livros de Química do EM, aponta para o <strong>mais eletronegativo (δ−)</strong>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 6. O QUE MAIS CAI ================= -->
+<section class="part" id="prova">
+  <div class="part-head"><span class="part-num">06</span><h2>O que mais cai em prova</h2></div>
+  <p class="lead-in">Ordenado pelo que aparece com mais frequência em ENEM, FUVEST, Unicamp e vestibulares de engenharia.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Tema</th><th>Como costuma aparecer</th><th class="c">Frequência</th></tr></thead>
+      <tbody>
+        <tr><td>Ordenar TE de compostos com massas próximas</td><td>Lista de 3–5 substâncias (álcool, éter, cetona, hidrocarboneto) para colocar em ordem</td><td class="c">★★★★★</td></tr>
+        <tr><td>Isômeros e ramificação</td><td>Tabela de TE de isômeros do pentano/hexano; “explique a diferença”</td><td class="c">★★★★★</td></tr>
+        <tr><td>Solubilidade × tamanho da cadeia</td><td>Tabela de álcoois (igual à da apostila); interpretar o balanço polar/apolar</td><td class="c">★★★★☆</td></tr>
+        <tr><td>Teste da gasolina (proveta)</td><td>ENEM: situação-problema com volumes para calcular o % de etanol</td><td class="c">★★★★☆</td></tr>
+        <tr><td>Sabões, detergentes e micelas</td><td>Identificar parte hidrofílica/lipofílica; por que o sabão limpa</td><td class="c">★★★★☆</td></tr>
+        <tr><td>Classificar a força intermolecular</td><td>“Qual a principal interação entre as moléculas de…?”</td><td class="c">★★★★☆</td></tr>
+        <tr><td>Volatilidade no cotidiano</td><td>Perfumes, álcool em gel, éter, evaporação e resfriamento</td><td class="c">★★★☆☆</td></tr>
+        <tr><td>Polaridade por geometria</td><td>CO<sub>2</sub> × H<sub>2</sub>O; cis × trans</td><td class="c">★★★☆☆</td></tr>
+        <tr><td>Dímero de ácido carboxílico</td><td>Discursiva: por que o ácido ferve acima do álcool de mesma massa</td><td class="c">★★☆☆☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">As estrelas são uma estimativa minha, a partir do padrão das provas; não são uma estatística oficial.</p>
+
+  <div class="box exam">
+    <span class="label">Modelo de resposta discursiva (FUVEST / Unicamp 2ª fase)</span>
+    <p><em>Pergunta: “Etanol e éter dimetílico têm a mesma fórmula molecular (C<sub>2</sub>H<sub>6</sub>O). Explique por que o etanol tem TE muito maior.”</em></p>
+    <p><strong>Resposta modelo:</strong> “Por serem isômeros, as duas substâncias têm a mesma massa molar e, portanto, dispersões de London de intensidade semelhante. No etanol, há hidrogênio ligado diretamente ao oxigênio, o que permite a formação de ligações de hidrogênio entre suas moléculas. No éter dimetílico, todos os hidrogênios estão ligados a carbono, e a interação predominante é dipolo-dipolo, mais fraca. Como é necessária mais energia para separar as moléculas de etanol, sua temperatura de ebulição é maior.”</p>
+    <p><strong>Estrutura que a banca procura:</strong> (1) o que é igual → (2) o que é diferente na estrutura → (3) qual força isso gera → (4) consequência na energia/TE.</p>
+  </div>
+
+  <h4>Exercícios resolvidos</h4>
+  <div class="toolbar">
+    <button class="btn" id="openAll">Mostrar todas as respostas</button>
+    <button class="btn" id="closeAll">Esconder todas</button>
+  </div>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q1 · Ordenar TE</span>Coloque em ordem crescente de TE: butano (58 g/mol), propanona (58 g/mol) e propan-1-ol (60 g/mol).</summary>
+    <div class="ans">
+      <p>Massas praticamente iguais → decide o tipo de força.</p>
+      <ul><li>Butano: hidrocarboneto → só London.</li><li>Propanona: cetona → dipolo-dipolo.</li><li>Propan-1-ol: álcool → ligação de hidrogênio.</li></ul>
+      <p><strong>Butano &lt; propanona &lt; propan-1-ol</strong> (valores reais: ≈ −0,5 °C &lt; 56 °C &lt; 97 °C).</p>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q2 · Isômeros</span>n-hexano e 2,2-dimetilbutano são isômeros (C<sub>6</sub>H<sub>14</sub>). Qual tem maior TE? Justifique.</summary>
+    <div class="ans">
+      <p>Ambos só fazem London e têm a mesma massa. O <strong>n-hexano</strong> é linear → maior área de contato → London mais intensa → <strong>maior TE</strong> (≈ 69 °C, contra ≈ 50 °C do 2,2-dimetilbutano). ↑ ramificação ↓ área de contato ↓ FIM ↓ TE.</p>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q3 · Teste da proveta</span>50 mL de gasolina foram agitados com 50 mL de água. Após separar, a fase aquosa tinha 64 mL. Qual o teor de etanol?</summary>
+    <div class="ans">
+      <p>Aumento da fase aquosa = etanol que migrou = 64 − 50 = <strong>14 mL</strong>.</p>
+      <p>Teor = 14 ÷ 50 = 0,28 → <strong>28%</strong> em volume.</p>
+      <p>Por quê migra? O etanol faz <strong>ligação de hidrogênio</strong> com a água, força mais intensa do que a London que faz com a gasolina.</p>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q4 · Dímero</span>Ácido acético e propan-1-ol têm massa molar 60 g/mol e ambos fazem LH. Por que o ácido ferve a ~118 °C e o álcool a 97 °C?</summary>
+    <div class="ans">
+      <p>O ácido carboxílico tem dois pontos de LH (C=O aceitador e O–H doador) e forma <strong>dímeros cíclicos</strong>, com <strong>duas ligações de hidrogênio simultâneas</strong> entre duas moléculas. A associação é mais intensa → mais energia para separar → maior TE.</p>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q5 · Polaridade</span>Classifique como polar ou apolar: CO<sub>2</sub>, H<sub>2</sub>O, NH<sub>3</sub>, CH<sub>2</sub>Cl<sub>2</sub>, BF<sub>3</sub>.</summary>
+    <div class="ans">
+      <ul>
+        <li>CO<sub>2</sub>: 2 nuvens, 2 O iguais → <strong>apolar</strong>.</li>
+        <li>H<sub>2</sub>O: 4 nuvens (2 pares), 2 H → <strong>polar</strong>.</li>
+        <li>NH<sub>3</sub>: 4 nuvens (1 par), 3 H → <strong>polar</strong>.</li>
+        <li>CH<sub>2</sub>Cl<sub>2</sub>: 4 nuvens, ligantes não todos iguais → <strong>polar</strong>.</li>
+        <li>BF<sub>3</sub>: 3 nuvens, 3 F → <strong>apolar</strong>.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q6 · Solubilidade</span>Ordem crescente de solubilidade em água: etanol, hexano, butan-1-ol, hexan-1-ol.</summary>
+    <div class="ans">
+      <p><strong>hexano &lt; hexan-1-ol &lt; butan-1-ol &lt; etanol</strong>.</p>
+      <p>Hexano não tem porção polar (insolúvel). Entre os álcoois (1 OH cada), quanto maior a cadeia, maior a porção apolar e menor a solubilidade: 0,6 &lt; 7,9 g/100 g &lt; infinita.</p>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q7 · Pegadinha</span>A propanona é miscível com água, mas ferve a 56 °C, bem abaixo do etanol. Isso é contraditório?</summary>
+    <div class="ans">
+      <p>Não. A <strong>TE</strong> depende das forças entre moléculas <strong>iguais</strong>: propanona–propanona só faz dipolo-dipolo (não há H em O). A <strong>solubilidade</strong> depende da força com o <strong>solvente</strong>: o O da carbonila tem par não ligante e <strong>recebe</strong> ligação de hidrogênio da água. Por isso é solúvel.</p>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q8 · Cotidiano</span>Por que o álcool em gel “gela” a mão e por que o éter evapora ainda mais rápido?</summary>
+    <div class="ans">
+      <p>Evaporar exige energia para vencer as FIM; essa energia é retirada da pele (calor latente de vaporização) → sensação de frio. O éter etílico não faz LH entre suas moléculas (só London e dipolo-dipolo), então tem FIM mais fracas, maior pressão de vapor e evapora mais rápido que o etanol, que faz LH.</p>
+    </div>
+  </details>
+
+  <details class="ex">
+    <summary><span class="q-meta">Q9 · Sabão</span>Explique, em termos de interações, como o sabão remove gordura.</summary>
+    <div class="ans">
+      <p>O sabão é anfifílico: a cabeça iônica (–COO<sup>−</sup>) interage com a água por <strong>íon-dipolo</strong>; a cauda apolar interage com a gordura por <strong>London</strong>. As caudas envolvem a gordura e as cabeças ficam voltadas para a água, formando <strong>micelas</strong>, que são arrastadas pela água no enxágue.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ================= 7. VÍDEOS ================= -->
+<section class="part" id="videos">
+  <div class="part-head"><span class="part-num">07</span><h2>Vídeos completos no YouTube</h2></div>
+  <p class="lead-in">Cada botão abre o vídeo exato (não a busca nem o canal). Todos foram conferidos em 26/09/2026: são públicos, e título e canal batem com o indicado abaixo.</p>
+
+  <div class="vid-group">
+    <h4>Polaridade das moléculas <span class="src">→ tópico 2.1</span></h4>
+    <div class="vid">
+      <div class="info">
+        <div class="title">Polaridade das Moléculas</div>
+        <div class="by">Professor Gabriel Cabral</div>
+        <div class="why">Vetor momento dipolar, geometria e polaridade — a base do tópico 2.1.</div>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=S-QAgrLI3dw" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10z" fill="currentColor"/></svg>Assistir</a>
+    </div>
+    <div class="vid">
+      <div class="info">
+        <div class="title">Polaridade das Ligações e das Moléculas | Resumo de Química para o Enem</div>
+        <div class="by">Curso Enem Gratuito</div>
+        <div class="why">Revisão de ligação polar × molécula polar, útil para fixar a diferença.</div>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=NV93Bh7aXqk" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10z" fill="currentColor"/></svg>Assistir</a>
+    </div>
+  </div>
+
+  <div class="vid-group">
+    <h4>Forças intermoleculares <span class="src">→ tópico 2.2</span></h4>
+    <div class="vid">
+      <div class="info">
+        <div class="title">Forças Intermoleculares</div>
+        <div class="by">Professor Gabriel Cabral</div>
+        <div class="why">London, dipolo-dipolo e ligação de hidrogênio.</div>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=QDJVCBwpixs" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10z" fill="currentColor"/></svg>Assistir</a>
+    </div>
+  </div>
+
+  <div class="vid-group">
+    <h4>Propriedades dos compostos orgânicos: ebulição e solubilidade <span class="src">→ tópicos 2.3 e 2.4</span></h4>
+    <div class="vid">
+      <div class="info">
+        <div class="title">Propriedade dos Compostos Orgânicos (1/2)</div>
+        <div class="by">Química com Prof. Paulo Valim</div>
+        <div class="why">Aula focada em vestibular sobre as propriedades físicas dos orgânicos — parte 1.</div>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=1fnXRC0T8L8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10z" fill="currentColor"/></svg>Assistir</a>
+    </div>
+    <div class="vid">
+      <div class="info">
+        <div class="title">Propriedade dos Compostos Orgânicos (2/2)</div>
+        <div class="by">Química com Prof. Paulo Valim</div>
+        <div class="why">Continuação — assista depois da parte 1.</div>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=TTAVFplzjSQ" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10z" fill="currentColor"/></svg>Assistir</a>
+    </div>
+    <div class="vid">
+      <div class="info">
+        <div class="title">Pontos de ebulição de compostos orgânicos</div>
+        <div class="by">Khan Academy Brasil</div>
+        <div class="why">Explicação passo a passo de como comparar TE (tipo de força, tamanho, ramificação).</div>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=n_Q3H4kI97c" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10z" fill="currentColor"/></svg>Assistir</a>
+    </div>
+    <div class="vid">
+      <div class="info">
+        <div class="title">Solubilidade de compostos orgânicos</div>
+        <div class="by">Khan Academy Brasil</div>
+        <div class="why">“Semelhante dissolve semelhante” e o efeito do tamanho da cadeia.</div>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=JxJOQPhXZ34" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10z" fill="currentColor"/></svg>Assistir</a>
+    </div>
+  </div>
+
+  <div class="box note">
+    <span class="label">O que foi e o que não foi verificado</span>
+    <p>Confirmei que cada link abre um vídeo público com o título e o canal listados. <strong>Não</strong> consegui assistir aos vídeos nem conferir a duração de cada um; as descrições acima partem do título e do tema. Sugestão de ordem: Gabriel Cabral (polaridade → forças) e depois Paulo Valim (1/2 → 2/2).</p>
+  </div>
+</section>
+
+<!-- ================= 8. REVISÃO FINAL ================= -->
+<section class="part" id="revisao">
+  <div class="part-head"><span class="part-num">08</span><h2>Revisão final dos conceitos principais</h2></div>
+  <p class="lead-in">Se você consegue explicar cada linha abaixo sem olhar, domina a aula.</p>
+
+  <ul class="check">
+    <li><strong>Polaridade:</strong> Σμ⃗ = 0 → apolar; Σμ⃗ ≠ 0 → polar. O vetor aponta para o mais eletronegativo.</li>
+    <li><strong>Nuvem eletrônica:</strong> simples, dupla, tripla ou par não ligante = 1 nuvem cada.</li>
+    <li><strong>Regra prática:</strong> nº de nuvens = nº de ligantes iguais → apolar; diferente → polar.</li>
+    <li><strong>London:</strong> dipolo instantâneo → dipolo induzido; em todas as moléculas; única nas apolares; cresce com o tamanho e a área de contato.</li>
+    <li><strong>Dipolo-dipolo:</strong> moléculas polares sem H em F/O/N (éter, aldeído, cetona, éster, amina/amida terciária…).</li>
+    <li><strong>Ligação de H:</strong> H ligado a F, O ou N + par não ligante de F, O ou N de outra molécula.</li>
+    <li><strong>Íon-dipolo:</strong> íons + solvente polar (sais em água, cabeça do sabão).</li>
+    <li><strong>Escala:</strong> London &lt; dipolo-dipolo &lt; LH &lt; íon-dipolo — só para tamanhos comparáveis.</li>
+    <li><strong>Relação-mestra:</strong> FIM ↑ = TE ↑ = pressão de vapor ↓ = volatilidade ↓.</li>
+    <li><strong>Fatores da TE:</strong> tipo de força; ↑ cadeia ↑ TE; ↑ ramificação ↓ TE; ↑ impedimento estérico ↓ TE; mais grupos LH / dímero ↑ TE.</li>
+    <li><strong>Solubilidade:</strong> semelhante dissolve semelhante; balanço entre porção polar (hidrofílica) e apolar (lipofílica).</li>
+    <li><strong>Álcoois em água:</strong> até 3 C miscíveis; a partir de 4 C a solubilidade cai; mais OH → mais solúvel.</li>
+    <li><strong>Gasolina + água:</strong> o etanol migra para a água (LH &gt; London). Aumento da fase aquosa = volume de etanol.</li>
+    <li><strong>Éter, aldeído, cetona, éster:</strong> não fazem LH entre si (TE menor), mas recebem LH da água (os pequenos são solúveis).</li>
+    <li><strong>Conexões:</strong> éter volátil (anestésico), álcool em gel esfria a pele (calor latente), perfumes com notas de TE diferentes.</li>
+  </ul>
+
+  <h4>Flashcards — tente responder antes de abrir</h4>
+  <details><summary>O que é uma nuvem eletrônica?</summary><div class="ans"><p>Cada região de elétrons em volta do átomo central: ligação simples, dupla, tripla ou par não ligante (cada uma conta 1).</p></div></details>
+  <details><summary>Por que o CCl<sub>4</sub> é apolar se suas ligações são polares?</summary><div class="ans"><p>Os 4 vetores C→Cl são iguais e simetricamente distribuídos (tetraedro): Σμ⃗ = 0.</p></div></details>
+  <details><summary>Quais duas condições definem uma ligação de hidrogênio?</summary><div class="ans"><p>H ligado diretamente a F, O ou N (doador) + par não ligante de F, O ou N de outra molécula (aceitador).</p></div></details>
+  <details><summary>Por que amina terciária está na coluna dipolo-dipolo?</summary><div class="ans"><p>O N está ligado a três carbonos e não tem H — falta o doador para a LH.</p></div></details>
+  <details><summary>n-pentano (36,1 °C) × 2,2-dimetilpropano (9,5 °C): por quê?</summary><div class="ans"><p>↑ ramificação → ↓ área de contato → ↓ London → ↓ TE.</p></div></details>
+  <details><summary>butan-1-ol (117,7 °C) × butan-2-ol (99,4 °C): por quê?</summary><div class="ans"><p>OH no meio sofre impedimento estérico → menos acessível para LH → ↓ FIM → ↓ TE.</p></div></details>
+  <details><summary>O que é uma molécula anfifílica (anfipática)?</summary><div class="ans"><p>Molécula com porção polar (hidrofílica) e porção apolar (lipofílica). Ex.: etanol, sabão.</p></div></details>
+  <details><summary>O que o asterisco do “balanço” no caderno lembra?</summary><div class="ans"><p>Que a “porção polar” inclui o <strong>número</strong> de regiões polares e a <strong>intensidade</strong> da FIM que fazem com a água.</p></div></details>
+  <details><summary>Por que o ácido carboxílico ferve acima do álcool de mesma massa?</summary><div class="ans"><p>Forma dímeros cíclicos com duas ligações de hidrogênio simultâneas.</p></div></details>
+  <details><summary>FIM mais forte → pressão de vapor maior ou menor?</summary><div class="ans"><p>Menor. As moléculas escapam menos do líquido → menos volátil e TE maior.</p></div></details>
+</section>
+
+<!-- ================= NOTAS SOBRE AS FOTOS ================= -->
+<section class="part" id="fotos">
+  <div class="part-head"><span class="part-num">+</span><h2>Notas sobre a leitura das fotos</h2></div>
+  <p class="lead-in">Onde a imagem estava ambígua, qual foi a interpretação adotada e por quê.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Foto</th><th>Trecho</th><th>Interpretação adotada</th></tr></thead>
+      <tbody>
+        <tr><td>Anotação “Polaridade”</td><td>Desenho do CCl<sub>4</sub> em cruz, com setas saindo do C</td><td>Representação plana de um tetraedro; setas = vetores C→Cl.</td></tr>
+        <tr><td>Anotação “Polaridade”</td><td>Molécula H–C(H)(H)–Ö–H com seta vermelha para cima</td><td>Metanol; a seta vermelha foi lida como o vetor resultante.</td></tr>
+        <tr><td>Séries de moléculas</td><td>Estrutura com TE = 99,4 °C</td><td>Provavelmente <strong>butan-2-ol</strong> (desenho pouco nítido; o valor bate com o butan-2-ol, ~99,5 °C, e a comparação com o butan-1-ol, 117,7 °C, é a clássica).</td></tr>
+        <tr><td>Séries de moléculas</td><td>Marca laranja no canto inferior direito</td><td>Ilegível; parece só um rabisco de marca-texto. Nada foi inferido dele.</td></tr>
+        <tr><td>Propriedades físico-químicas</td><td>“Lista 8 + ex. dessa folha” e marcas ao lado, no topo</td><td>Lembrete de tarefa (fazer a Lista 8 e os exercícios da folha), não é conteúdo da matéria.</td></tr>
+        <tr><td>Propriedades físico-químicas</td><td>Anotação em verde sobre London, parcialmente cortada</td><td>Leitura provável: “A parte negativa é temporariamente exposta” (dipolo instantâneo).</td></tr>
+        <tr><td>Propriedades físico-químicas</td><td>Desenhos de H<sub>2</sub>O e etanol no rodapé (impressão clara)</td><td>Ilustrações de ligação de hidrogênio água–água e etanol–água.</td></tr>
+        <tr><td>Casos 1, 2 e 3</td><td>Caso 2 — Poliálcoois em água</td><td>Espaço em branco na foto; conteúdo fornecido como complemento.</td></tr>
+        <tr><td>“Resumindo…” e “Complemento e Conexões”</td><td>—</td><td>Totalmente legíveis; reproduzidos na íntegra.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Aula montada a partir da apostila “Compostos do Carbono · 2ª série” (Colégio Agostiniano Mendel — Prof.ª Thatiana &amp; Prof. Gabriel Esteves) e das suas anotações. Dados de TE e solubilidade marcados como “apostila” são os impressos no material; os demais são valores de referência arredondados.
+</footer>
+</div>
+</main>
+
+<button id="toTop" aria-label="Voltar ao topo">↑</button>
+
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  var toTop=document.getElementById('toTop');
+  var nav=document.getElementById('toc');
+  var toggle=document.getElementById('navToggle');
+  var links=[].slice.call(nav.querySelectorAll('a[href^="#"]'));
+  var targets=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    var y=h.scrollTop||document.body.scrollTop;
+    bar.style.width=(max>0?(y/max*100):0)+'%';
+    toTop.classList.toggle('show',y>700);
+    var current=0;
+    for(var i=0;i<targets.length;i++){
+      if(targets[i] && targets[i].getBoundingClientRect().top<=140){current=i;}
+    }
+    links.forEach(function(a,i){a.classList.toggle('active',i===current);});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+
+  toggle.addEventListener('click',function(){nav.classList.toggle('open');});
+  links.forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+  document.addEventListener('click',function(e){
+    if(nav.classList.contains('open') && !nav.contains(e.target) && e.target!==toggle){nav.classList.remove('open');}
+  });
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  var ex=[].slice.call(document.querySelectorAll('details.ex'));
+  document.getElementById('openAll').addEventListener('click',function(){ex.forEach(function(d){d.open=true;});});
+  document.getElementById('closeAll').addEventListener('click',function(){ex.forEach(function(d){d.open=false;});});
+
+  window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.setAttribute('data-was',d.open?'1':'0');d.open=true;});});
+  window.addEventListener('afterprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=d.getAttribute('data-was')==='1';});});
+})();
+</script>
+</body>
+</html>
